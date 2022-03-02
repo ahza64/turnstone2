@@ -1,13 +1,16 @@
 import logo from './logo.svg';
-import Navbar from './components/Navbar'
+import Navigation from './components/Navigation'
+import Tronitron from './components/Tronitron'
+import ServiceCards from './components/ServiceCards'
 
 import './App.css';
 
 function App() {
   return (
     <div>
-    <Navbar/>
-      hello world
+      <Navigation/>
+      <Tronitron/>
+      <ServiceCards/>
     </div>
   );
 }
