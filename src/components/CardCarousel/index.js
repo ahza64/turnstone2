@@ -35,7 +35,6 @@ function CarouselCard({ item }) {
       selected
     }))
   }
-  console.log(state);
 
   return (
     <Card className="--card">

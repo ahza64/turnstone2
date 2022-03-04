@@ -1,0 +1,18 @@
+.projects-portal-wrapper {
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 16px 0;
+}
+
+.projects-headline {
+  max-width: 400px;
+  margin-bottom: 16px;
+  text-align: justify;
+}
+
+.checkbox-wrapper {
+  margin-bottom: 8px;
+}
