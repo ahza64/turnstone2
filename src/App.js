@@ -1,19 +1,41 @@
 import logo from './logo.svg';
-import Navigation from './components/Navigation'
 import Tronitron from './components/Tronitron'
 import CardCarousel from './components/CardCarousel'
 import ProjectsPortal from './components/ProjectsPortal'
-
+// import Resume from './'
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
 import './App.css';
 
-function App() {
+// --BrowserRouter Routes Route
+
+function Home() {
   return (
-    <div>
-      <Navigation/>
+    <>
       <Tronitron/>
       <CardCarousel/>
       <ProjectsPortal/>
+    </>
+  )
+}
+
+function Resume() {
+  return (
+    <div>
+      Resume
     </div>
+  )
+}
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Home/>}/>
+      <Route path="/resume" element={<Resume/>}/>
+    </Routes>
   );
 }
 

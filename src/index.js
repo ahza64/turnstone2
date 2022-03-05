@@ -4,9 +4,11 @@ import { BrowserRouter } from "react-router-dom";
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Navigation from './components/Navigation'
 
 ReactDOM.render(
   <BrowserRouter>
+    <Navigation/>
     <App />
   </BrowserRouter>,
   document.getElementById('root')

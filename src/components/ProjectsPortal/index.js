@@ -36,7 +36,7 @@ function CheckBox(props) {
   return (
     <>
       <input type="checkbox" onChange={() => props.onHandleChange()}/>{` `}
-      <label htmlFor="recruiter">{` I am a technical recruiter`}</label>
+      <label htmlFor="recruiter">{` I am a technical recruiter.`}</label>
     </>
   )
 }
@@ -53,7 +53,7 @@ export default function ProjectsPortal() {
       <div className="projects-portal-wrapper">
         <div className="projects-headline">
           <h2>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam et mattis diam.
+             Click the checkbox below to unlock the button to open a modal portal to the projects page.
           </h2>
         </div>
         <div className="checkbox-wrapper">

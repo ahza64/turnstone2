@@ -17,3 +17,31 @@
 .btn-wrapper button {
   margin: 8px;
 }
+
+.avatar-grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.avatar-text {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.avatar-social {
+  width: 100px;
+  margin: 0 auto;
+  display: flex;
+  font-size: 32px;
+  justify-content: space-around;
+  align-content: center;
+}
+
+@media (max-width: 450px) {
+  .avatar-grid {
+    flex-direction: column;
+    padding: 32px;
+  }
+}
