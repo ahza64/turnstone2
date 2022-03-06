@@ -4,11 +4,11 @@ import { BrowserRouter } from "react-router-dom";
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Navigation from './components/Navigation'
+import Navbar from './components/Navbar'
 
 ReactDOM.render(
   <BrowserRouter>
-    <Navigation/>
+    <Navbar/>
     <App />
   </BrowserRouter>,
   document.getElementById('root')
