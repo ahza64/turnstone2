@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import Tronitron from './components/Tronitron'
 import CardCarousel from './components/CardCarousel'
 import ProjectsPortal from './components/ProjectsPortal'
-// import Resume from './'
+import Projects from './pages/Projects'
 import {
   BrowserRouter,
   Routes,
@@ -26,14 +26,6 @@ function Resume() {
   return (
     <div>
       Resume
-    </div>
-  )
-}
-
-function Projects() {
-  return (
-    <div>
-      Projects
     </div>
   )
 }
