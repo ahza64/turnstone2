@@ -25,19 +25,19 @@ const serviceCardsData = [
       {
         id: uuidv4(),
         title: "HTML",
-        description: ipsome1,
+        description: "The building blocks of the internet. I originally learned about HTML thruogh an online tutorial on Udacity.",
         icon: <SiHtml5/>
       },
       {
         id: uuidv4(),
         title: "CSS",
-        description: ipsome2,
+        description: "I really like to play with transitions and interesting color schemes that pop. Be sure to flip the theme.",
         icon: <SiCss3/>
       },
       {
         id: uuidv4(),
         title: "JavaScript",
-        description: ipsome3,
+        description: "Ah, good ol' JavaScript, 'the most popluar language in the world'... No one ever said it was easy though.",
         icon: <SiJavascript/>
       }
     ]
@@ -50,19 +50,19 @@ const serviceCardsData = [
       {
         id: uuidv4(),
         title: "Node.js",
-        description: ipsome1,
+        description: "Node? do you just mean serverside javascript? Ok sure. I mean fetch() has even been recently added.",
         icon: <SiNodedotjs/>
       },
       {
         id: uuidv4(),
         title: "Postgresql",
-        description: ipsome2,
+        description: "tables tables tables tables tables tables tables tables",
         icon: <SiPostgresql/>
       },
       {
         id: uuidv4(),
         title: "Mongodb",
-        description: ipsome3,
+        description: "Me likey MongoDB. I even have some professional experience adapting the infamous 'asset pipeline'... hella meta dude",
         icon: <SiMongodb/>
       }
     ]
@@ -75,19 +75,19 @@ const serviceCardsData = [
       {
         id: uuidv4(),
         title: "IoT",
-        description: ipsome1,
+        description: "Who doesn't want a robot house, and a robot garden, and a robot slave you control with your phone.",
         icon: <SiRaspberrypi/>
       },
       {
         id: uuidv4(),
         title: "Automation",
-        description: ipsome2,
+        description: "Lots of real world experience. Industrial generators are all fully automated with several built in redundancies.",
         icon: <SiGithub/>
       },
       {
         id: uuidv4(),
         title: "Robotics/Automotive",
-        description: ipsome3,
+        description: "Self driving cars can and will be safer than humans. Precision robotics is letting humanity reach unreachable places.",
         icon: <SiReact/>
       }
     ]

@@ -1,4 +1,5 @@
 import { Modal, Button, Container } from "react-bootstrap"
+import { Link } from "react-router-dom"
 import { useState } from "react"
 import "./ProjectsPortal.css"
 
@@ -11,21 +12,34 @@ function ModalTrigger(props) {
   return (
     <>
       <Button variant="primary" disabled={props.isChecked === false} onClick={handleShow}>
-        Launch demo modal
+        See my projects
       </Button>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>
+            Feel free to reach out, or use the link to see my projects and resume.
+          </Modal.Title>
         </Modal.Header>
-        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+        <Modal.Body>
+          justinmichaelpettit@gmail.com
+        </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
-          </Button>
+          <Link to="/">
+            <Button variant="primary" onClick={handleClose}>
+              Home Page
+            </Button>
+          </Link>
+          <Link to="/resume">
+            <Button variant="primary" onClick={handleClose}>
+              Resume
+            </Button>
+          </Link>
+          <Link to="/projects">
+            <Button variant="primary" onClick={handleClose}>
+              Projects Page
+            </Button>
+          </Link>
         </Modal.Footer>
       </Modal>
     </>

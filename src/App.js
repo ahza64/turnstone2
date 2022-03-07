@@ -30,11 +30,20 @@ function Resume() {
   )
 }
 
+function Projects() {
+  return (
+    <div>
+      Projects
+    </div>
+  )
+}
+
 function App() {
   return (
     <Routes>
       <Route path="/" element={<Home/>}/>
       <Route path="/resume" element={<Resume/>}/>
+      <Route path="/projects" element={<Projects/>}/>
     </Routes>
   );
 }

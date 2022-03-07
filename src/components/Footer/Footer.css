@@ -1,0 +1,11 @@
+.footer-wrapper {
+  padding: 16px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-wrapper div {
+  margin-right: 16px;
+  font-size: 12px;
+  text-transform: capitalize;
+}

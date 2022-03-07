@@ -5,11 +5,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 
 ReactDOM.render(
   <BrowserRouter>
-    <Navbar/>
+    <Navbar />
     <App />
+    <Footer />
   </BrowserRouter>,
   document.getElementById('root')
 );
