@@ -34,7 +34,7 @@ export default function Tronitron() {
               </div>
             </div>
           </div>
-          <div>
+          <div className="avatar-canvas">
             <Canvas
               camera={{ position: [10, 7, 12.25], fov: 7 }}
               style={{

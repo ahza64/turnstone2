@@ -42,7 +42,13 @@
 @media (max-width: 450px) {
   .avatar-grid {
     flex-direction: column;
-    padding: 32px;
+    padding: 32px 0;
+  }
+
+  .avatar-canvas {
+    border: 1px solid #cacaca;
+    margin-top: 16px;
+    border-radius: 4px;
   }
 }
 

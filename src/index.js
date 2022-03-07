@@ -6,12 +6,28 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import { TiArrowDownOutline } from "react-icons/ti"
+
+function ScrollToBottomButton() {
+  const handleScrollToBottom = () => {
+      window.scrollTo(0, document.body.scrollHeight)
+  }
+
+  return (
+    <div className="scroll-to-bottom-button">
+      <button onClick={handleScrollToBottom}>
+        <TiArrowDownOutline />
+      </button>
+    </div>
+  )
+}
 
 ReactDOM.render(
   <BrowserRouter>
     <Navbar />
     <App />
     <Footer />
+    <ScrollToBottomButton />
   </BrowserRouter>,
   document.getElementById('root')
 );

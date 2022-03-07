@@ -11,3 +11,22 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.scroll-to-bottom-button {
+  position: fixed;
+  right: 8px;
+  bottom: 8px;
+  display: none;
+}
+
+.scroll-to-bottom-button button {
+  border: none;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+@media (max-width: 450px) {
+  .scroll-to-bottom-button {
+    display: inherit;
+  }
+}
