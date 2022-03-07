@@ -45,3 +45,45 @@
     padding: 32px;
   }
 }
+
+.tron-linkedin {
+  color: black;
+}
+
+.tron-linkedin-control {
+  animation: rotate 3s ease-in forwards;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(1080deg);
+  }
+}
+
+.tron-github {
+  color: black;
+}
+
+.tron-github-control {
+  animation: rotateGit 3s ease-in forwards;
+}
+
+@keyframes rotateGit {
+  from {
+    transform: rotate(-0deg);
+  }
+  to {
+    transform: rotate(-1080deg);
+  }
+}
+
+.tron-linkedin:hover {
+  color: black;
+}
+
+.tron-github:hover {
+  color: black;
+}

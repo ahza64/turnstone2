@@ -22,17 +22,21 @@ export default function Tronitron() {
               <h3>Software Engineer and Full Stack Web Developer</h3>
             </div>
             <div className="avatar-social">
-              <div>
-                <SiLinkedin/>
+              <div className="tron-linkedin-control">
+                <a className="tron-linkedin" target="__blank" href="https://www.linkedin.com/in/justinmichaelpettit/">
+                  <SiLinkedin/>
+                </a>
               </div>
-              <div>
-                <SiGithub/>
+              <div className="tron-github-control">
+                <a className="tron-github" target="__blank" href="https://github.com/ahza64">
+                  <SiGithub/>
+                </a>
               </div>
             </div>
           </div>
           <div>
             <Canvas
-              camera={{ position: [2, 0, 12.25], fov: 10 }}
+              camera={{ position: [10, 7, 12.25], fov: 7 }}
               style={{
                 backgroundColor: 'transparent',
                 width: 'auto',

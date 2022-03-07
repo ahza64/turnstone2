@@ -12,13 +12,13 @@ function ModalTrigger(props) {
   return (
     <>
       <Button variant="primary" disabled={props.isChecked === false} onClick={handleShow}>
-        See my projects
+        See my projects, access email address.
       </Button>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>
-            Feel free to reach out, or use the link to see my projects and resume.
+            Feel free to reach out, or use the links to navigate to a page.
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
@@ -26,17 +26,17 @@ function ModalTrigger(props) {
         </Modal.Body>
         <Modal.Footer>
           <Link to="/">
-            <Button variant="primary" onClick={handleClose}>
+            <Button variant="outline-secondary" onClick={handleClose}>
               Home Page
             </Button>
           </Link>
           <Link to="/resume">
-            <Button variant="primary" onClick={handleClose}>
+            <Button variant="outline-secondary" onClick={handleClose}>
               Resume
             </Button>
           </Link>
           <Link to="/projects">
-            <Button variant="primary" onClick={handleClose}>
+            <Button variant="outline-secondary" onClick={handleClose}>
               Projects Page
             </Button>
           </Link>
@@ -67,7 +67,7 @@ export default function ProjectsPortal() {
       <div className="projects-portal-wrapper">
         <div className="projects-headline">
           <h2>
-             Click the checkbox below to unlock the button to open a modal portal to the projects page.
+             Click the checkbox below to unlock the button to open a modal portal to access my (more secured) email address and furthur optional navigation.
           </h2>
         </div>
         <div className="checkbox-wrapper">

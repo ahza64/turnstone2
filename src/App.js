@@ -3,6 +3,7 @@ import Tronitron from './components/Tronitron'
 import CardCarousel from './components/CardCarousel'
 import ProjectsPortal from './components/ProjectsPortal'
 import Projects from './pages/Projects'
+import ResumePage from './pages/Resume'
 import {
   BrowserRouter,
   Routes,
@@ -22,19 +23,11 @@ function Home() {
   )
 }
 
-function Resume() {
-  return (
-    <div>
-      Resume
-    </div>
-  )
-}
-
 function App() {
   return (
     <Routes>
       <Route path="/" element={<Home/>}/>
-      <Route path="/resume" element={<Resume/>}/>
+      <Route path="/resume" element={<ResumePage/>}/>
       <Route path="/projects" element={<Projects/>}/>
     </Routes>
   );

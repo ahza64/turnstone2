@@ -19,21 +19,21 @@ function NavbarLinksDesktop() {
       <div className="nav-links-wrapper">
         <div className="navlink">
           <Link to="/">
-            <Button>
+            <Button variant="outline-secondary">
               Home
             </Button>
           </Link>
         </div>
         <div className="navlink">
           <Link to="/resume">
-            <Button>
+            <Button variant="outline-secondary">
               Resume
             </Button>
           </Link>
         </div>
         <div className="navlink">
           <Link to="/projects">
-            <Button>
+            <Button variant="outline-secondary">
               Projects
             </Button>
           </Link>
