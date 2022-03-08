@@ -27,9 +27,11 @@ function NavbarLinksDesktop() {
         <div>
           TurnStone
         </div>
-        <div>
-          <ThemeSwitch/>
-        </div>
+        {/*
+          <div>
+            <ThemeSwitch/>
+          </div>
+        */}
       </div>
       <div className="nav-links-wrapper">
         <div className="navlink">
