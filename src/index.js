@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from "react-router-dom";
+import AppProvider from "./context";
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -24,10 +25,12 @@ function ScrollToBottomButton() {
 
 ReactDOM.render(
   <BrowserRouter>
-    <Navbar />
-    <App />
-    <Footer />
-    <ScrollToBottomButton />
+    <AppProvider>
+      <Navbar />
+      <App />
+      <Footer />
+      <ScrollToBottomButton />
+    </AppProvider>
   </BrowserRouter>,
   document.getElementById('root')
 );

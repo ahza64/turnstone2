@@ -86,7 +86,7 @@ const serviceCardsData = [
       },
       {
         id: uuidv4(),
-        title: "Robotics/Automotive",
+        title: "Robotics",
         description: "Self driving cars can and will be safer than humans. Precision robotics is letting humanity reach unreachable places.",
         icon: <SiReact/>
       }

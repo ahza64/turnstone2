@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react'
-import { Navbar, Container, Nav, Button } from "react-bootstrap"
+import { useState, useEffect, useContext } from 'react'
+import { Navbar, Container, Nav, Button, Form } from "react-bootstrap"
 import { Link, useNavigate } from "react-router-dom"
 import Hamburger from "hamburger-react"
+import { AppContext } from "../../context"
 import "./Navbar.css"
 
 function NavbarDesktop() {
@@ -10,11 +11,25 @@ function NavbarDesktop() {
   )
 }
 
+function ThemeSwitch() {
+  const [state] = useContext(AppContext)
+  return (
+    <Form>
+      <Form.Check type="switch" label={state.theme} />
+    </Form>
+  )
+}
+
 function NavbarLinksDesktop() {
   return (
     <div className="navbar-links-wrapper">
       <div>
-        TurnStone
+        <div>
+          TurnStone
+        </div>
+        <div>
+          <ThemeSwitch/>
+        </div>
       </div>
       <div className="nav-links-wrapper">
         <div className="navlink">

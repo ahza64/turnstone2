@@ -1,4 +1,5 @@
 import logo from './logo.svg';
+import { useContext } from 'react'
 import Tronitron from './components/Tronitron'
 import CardCarousel from './components/CardCarousel'
 import ProjectsPortal from './components/ProjectsPortal'
