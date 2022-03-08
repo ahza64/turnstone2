@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from 'react'
-import { Navbar, Container, Nav, Button, Form } from "react-bootstrap"
+import { Container, Button, Form } from "react-bootstrap"
 import { Link, useNavigate } from "react-router-dom"
 import Hamburger from "hamburger-react"
 import { AppContext } from "../../context"

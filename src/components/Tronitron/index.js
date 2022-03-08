@@ -1,6 +1,5 @@
 import { Suspense } from 'react'
-import { Button, Container } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Container } from 'react-bootstrap'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import { SiGithub, SiLinkedin } from "react-icons/si"

@@ -6,15 +6,10 @@ import {
   SiJavascript,
   SiPostgresql,
   SiMongodb,
-  SiMocha,
   SiGithub,
   SiRaspberrypi,
   SiReact
 } from "react-icons/si"
-
-const ipsome1 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eleifend neque venenatis mi scelerisque, vitae iaculis."
-const ipsome2 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque consectetur est diam, eu malesuada arcu laoreet at. Morbi porta, quam convallis."
-const ipsome3 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sit amet iaculis magna. Etiam dolor nulla, dictum quis."
 
 const serviceCardsData = [
   {
