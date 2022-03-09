@@ -26,15 +26,16 @@ function ThemeSwitch() {
 
 function NavbarLinksDesktop() {
   const [state] = useContext(AppContext)
+  const themeMode = state.theme.charAt(0).toUpperCase() + state.theme.slice(1)
   return (
     <div className="navbar-links-wrapper">
       <div className="navbar-icon">
         <div>
-          TurnStone {state.theme.charAt(0).toUpperCase() + state.theme.slice(1)}
+          TurnStone {/*{themeMode}*/}
         </div>
-        <div className="theme-switch">
+        {/*<div className="theme-switch">
           <ThemeSwitch/>
-        </div>
+        </div>*/}
       </div>
       <div className="nav-links-wrapper">
         <div className="navlink">

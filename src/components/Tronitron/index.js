@@ -52,7 +52,7 @@ export default function Tronitron() {
             </Canvas>
           </div>
         </div>
-        <div>
+        <div className="introduction">
           <p>{tronitronData.introduction}</p>
         </div>
 
