@@ -32,6 +32,7 @@
 .card-desc-wrapper {
   min-height: 230px;
   padding: 0 8px;
+  text-align: justify;
 }
 
 .card-title-wrapper {

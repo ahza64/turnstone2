@@ -3,6 +3,7 @@ import { Container, Button, Form } from "react-bootstrap"
 import { Link, useNavigate } from "react-router-dom"
 import Hamburger from "hamburger-react"
 import { AppContext } from "../../context"
+import useThemeControl from "../../hooks/useThemeControl"
 import "./Navbar.css"
 
 function NavbarDesktop() {
@@ -13,25 +14,28 @@ function NavbarDesktop() {
 
 function ThemeSwitch() {
   const [state] = useContext(AppContext)
+  const { toggleTheme } = useThemeControl()
+  const nextTheme = state.theme === "dark" ? "light" : "dark"
+  const isChecked = state.theme === "dark"
   return (
     <Form>
-      <Form.Check type="switch" label={state.theme} />
+      <Form.Check onChange={toggleTheme} checked={isChecked} type="switch" />
     </Form>
   )
 }
 
 function NavbarLinksDesktop() {
+  const [state] = useContext(AppContext)
+  const themeMode = state.theme.charAt(0).toUpperCase() + state.theme.slice(1)
   return (
     <div className="navbar-links-wrapper">
-      <div>
+      <div className="navbar-icon">
         <div>
-          TurnStone
+          TurnStone {/*{themeMode}*/}
         </div>
-        {/*
-          <div>
-            <ThemeSwitch/>
-          </div>
-        */}
+        {/*<div className="theme-switch">
+          <ThemeSwitch/>
+        </div>*/}
       </div>
       <div className="nav-links-wrapper">
         <div className="navlink">

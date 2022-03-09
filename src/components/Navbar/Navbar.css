@@ -58,3 +58,11 @@
   display: flex;
   justify-content: flex-end;
 }
+
+.navbar-icon {
+  display: flex;
+}
+
+.theme-switch {
+  padding-left: 12px
+}
