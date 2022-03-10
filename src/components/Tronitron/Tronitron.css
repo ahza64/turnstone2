@@ -61,7 +61,7 @@
 }
 
 .tron-linkedin-control {
-  animation: rotate 3s ease-in forwards;
+  animation: rotate 3s ease forwards;
 }
 
 @keyframes rotate {
@@ -78,7 +78,7 @@
 }
 
 .tron-github-control {
-  animation: rotateGit 3s ease-in forwards;
+  animation: rotateGit 3s ease forwards;
 }
 
 @keyframes rotateGit {

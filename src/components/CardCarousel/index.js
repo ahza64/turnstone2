@@ -1,5 +1,4 @@
 import React from 'react'
-import { Card, Container } from 'react-bootstrap'
 import serviceCardsData from './serviceCardsData.js'
 import './CarouselCards.css'
 
@@ -37,7 +36,7 @@ function CarouselCard({ item }) {
   }
 
   return (
-    <Card className="--card">
+    <div className="--card">
       <div className="card-title">
         <h4>
           {item.title}
@@ -65,13 +64,13 @@ function CarouselCard({ item }) {
             onHandleChange={handleChange}/>
         ))}
       </div>
-    </Card>
+    </div>
   )
 }
 
 export default function CarouselCards() {
   return (
-    <Container>
+    <>
       <div>
         <h1>
           Services
@@ -82,6 +81,6 @@ export default function CarouselCards() {
           <CarouselCard key={item.id} item={item}/>
         ))}
       </div>
-    </Container>
+    </>
   )
 }

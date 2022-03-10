@@ -1,5 +1,4 @@
 import { useState, useEffect, useContext } from 'react'
-import { Container, Button, Form } from "react-bootstrap"
 import { Link, useNavigate } from "react-router-dom"
 import Hamburger from "hamburger-react"
 import { AppContext } from "../../context"
@@ -18,9 +17,10 @@ function ThemeSwitch() {
   const nextTheme = state.theme === "dark" ? "light" : "dark"
   const isChecked = state.theme === "dark"
   return (
-    <Form>
-      <Form.Check onChange={toggleTheme} checked={isChecked} type="switch" />
-    </Form>
+    <>
+      <input type="checkbox" onChange={toggleTheme} checked={isChecked}/>
+      <label htmlFor="theme"></label>
+    </>
   )
 }
 
@@ -31,32 +31,32 @@ function NavbarLinksDesktop() {
     <div className="navbar-links-wrapper">
       <div className="navbar-icon">
         <div>
-          TurnStone {/*{themeMode}*/}
+          TurnStone {themeMode}
         </div>
-        {/*<div className="theme-switch">
+        <div className="theme-switch">
           <ThemeSwitch/>
-        </div>*/}
+        </div>
       </div>
       <div className="nav-links-wrapper">
         <div className="navlink">
           <Link to="/">
-            <Button variant="outline-secondary">
+            <button variant="outline-secondary">
               Home
-            </Button>
+            </button>
           </Link>
         </div>
         <div className="navlink">
           <Link to="/resume">
-            <Button variant="outline-secondary">
+            <button variant="outline-secondary">
               Resume
-            </Button>
+            </button>
           </Link>
         </div>
         <div className="navlink">
           <Link to="/projects">
-            <Button variant="outline-secondary">
+            <button variant="outline-secondary">
               Projects
-            </Button>
+            </button>
           </Link>
         </div>
       </div>
@@ -124,14 +124,12 @@ function NavbarMobileMenu(props) {
 export default function Navigation() {
   return (
     <nav className="navbar">
-      <Container>
-        <div className="navbar-desktop">
-          <NavbarDesktop/>
-        </div>
-        <div className="navbar-mobile">
-          <NavbarMobile />
-        </div>
-      </Container>
+      <div className="navbar-desktop">
+        <NavbarDesktop/>
+      </div>
+      <div className="navbar-mobile">
+        <NavbarMobile />
+      </div>
     </nav>
   )
 }
