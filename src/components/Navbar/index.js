@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom"
 import Hamburger from "hamburger-react"
 import { AppContext } from "../../context"
 import useThemeControl from "../../hooks/useThemeControl"
+import { Button } from "semantic-ui-react"
+
 import "./Navbar.css"
 
 function NavbarDesktop() {
@@ -40,23 +42,23 @@ function NavbarLinksDesktop() {
       <div className="nav-links-wrapper">
         <div className="navlink">
           <Link to="/">
-            <button variant="outline-secondary">
+            <Button variant="outline-secondary">
               Home
-            </button>
+            </Button>
           </Link>
         </div>
         <div className="navlink">
           <Link to="/resume">
-            <button variant="outline-secondary">
+            <Button variant="outline-secondary">
               Resume
-            </button>
+            </Button>
           </Link>
         </div>
         <div className="navlink">
           <Link to="/projects">
-            <button variant="outline-secondary">
+            <Button>
               Projects
-            </button>
+            </Button>
           </Link>
         </div>
       </div>
