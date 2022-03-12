@@ -3,6 +3,10 @@ import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import { SiGithub, SiLinkedin } from "react-icons/si"
 import Model from './3dselfmodel'
+
+import { Container } from "semantic-ui-react"
+
+
 import tronitronData from "./tronitronData"
 import './Tronitron.css'
 
@@ -50,9 +54,11 @@ export default function Tronitron() {
           </Canvas>
         </div>
       </div>
-      <div className="introduction">
-        <p>{tronitronData.introduction}</p>
-      </div>
+      <Container>
+        <div className="introduction">
+            <p>{tronitronData.introduction}</p>
+        </div>
+      </Container>
     </div>
   )
 }

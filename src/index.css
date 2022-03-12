@@ -30,3 +30,8 @@ code {
     display: inherit;
   }
 }
+
+body.dark {
+  background-color: black;
+  color: white;
+}

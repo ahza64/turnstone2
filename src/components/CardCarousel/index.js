@@ -1,4 +1,8 @@
-import React from 'react'
+import { useState, useContext } from 'react'
+import { AppContext } from "../../context"
+import { Container, Card } from "semantic-ui-react"
+
+
 import serviceCardsData from './serviceCardsData.js'
 import './CarouselCards.css'
 
@@ -24,8 +28,8 @@ function CarouselCard({ item }) {
     selected: item.services[0],
     list: item.services
   }
-
-  const [state, setState] = React.useState({ ...initialState })
+  const [state, setState] = useState({ ...initialState })
+  const [context] = useContext(AppContext)
 
   const handleChange = item => {
     const [selected] = state.list.filter(record => record.id === item.id)
@@ -36,51 +40,47 @@ function CarouselCard({ item }) {
   }
 
   return (
-    <div className="--card">
-      <div className="card-title">
-        <h4>
-          {item.title}
-        </h4>
+    <div className={`card-wrapper ${context.theme}`}>
+      <div>
+       {item.title}
+     </div>
+     <div className="card-icon-title">
+      <div>
+        {state.selected.icon}
       </div>
       <div>
-        <div className="card-title-wrapper">
-          <div className="card-icon">
-            {state.selected.icon}
-          </div>
-          <div className="card-icon-title">
-            {state.selected.title}
-          </div>
-        </div>
-        <div className="card-desc-wrapper">
-          {state.selected.description}
-        </div>
+        {state.selected.title}
       </div>
-      <div className="dot-wrapper">
-        {state.list.map((item) => (
-          <CardDot
-            key={item.id}
-            item={item}
-            selectedId={state.selected.id}
-            onHandleChange={handleChange}/>
-        ))}
-      </div>
+     </div>
+     <div>
+      {state.selected.description}
+     </div>
+        <div className="dot-wrapper">
+          {state.list.map((item) => (
+            <CardDot
+              key={item.id}
+              item={item}
+              selectedId={state.selected.id}
+              onHandleChange={handleChange}/>
+          ))}
+        </div>
     </div>
   )
 }
 
 export default function CarouselCards() {
   return (
-    <>
+    <Container>
       <div>
         <h1>
           Services
         </h1>
       </div>
-      <div className="service-cards-wrapper">
+      <div className="card-grid">
         {serviceCardsData.map((item) => (
           <CarouselCard key={item.id} item={item}/>
         ))}
       </div>
-    </>
+    </Container>
   )
 }

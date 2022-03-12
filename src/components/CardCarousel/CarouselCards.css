@@ -1,8 +1,26 @@
-.service-cards-wrapper {
+/* .service-cards-wrapper {
   display: grid;
   grid-template-columns: repeat(3, auto);
   column-gap: 16px;
   row-gap: 16px;
+} */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  column-gap: 8px;
+  row-gap: 8px;
+}
+
+.card-wrapper {
+
+  border-radius: 4px;
+  padding: 8px;
+}
+
+.card-icon-title {
+  display: flex;
+  font-size: 18px;
 }
 
 .card-dot {
@@ -29,43 +47,18 @@
   display: flex;
 }
 
-.card-desc-wrapper {
-  min-height: 230px;
-  padding: 0 8px;
-  text-align: justify;
-}
-
-.card-title-wrapper {
-  display: flex;
-  align-items: center;
-}
-
-.card-icon {
-  font-size: 32px;
-  margin: 0 8px;
-}
-
-.card-title {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  padding-top: 8px;
-}
-
-.card-icon-title {
-  font-weight: bold;
-}
-
 @media (max-width: 750px) {
-  .service-cards-wrapper {
+  .card-grid {
     grid-template-columns: repeat(1, auto);
+    row-gap: 32px;
   }
+}
 
-  .--card {
-    margin: 16px 0;
-  }
+.card-wrapper.dark {
+  border: 1px solid blue;
 
-  .card-desc-wrapper {
-    min-height: 80px;
-  }
+}
+
+.card-wrapper.light {
+  border: 1px solid #cacaca;
 }

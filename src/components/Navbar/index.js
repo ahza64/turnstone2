@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom"
 import Hamburger from "hamburger-react"
 import { AppContext } from "../../context"
 import useThemeControl from "../../hooks/useThemeControl"
-import { Button } from "semantic-ui-react"
+import { Button, Checkbox, Container } from "semantic-ui-react"
 
 import "./Navbar.css"
 
@@ -19,10 +19,7 @@ function ThemeSwitch() {
   const nextTheme = state.theme === "dark" ? "light" : "dark"
   const isChecked = state.theme === "dark"
   return (
-    <>
-      <input type="checkbox" onChange={toggleTheme} checked={isChecked}/>
-      <label htmlFor="theme"></label>
-    </>
+    <Checkbox toggle onChange={toggleTheme} checked={isChecked}/>
   )
 }
 
@@ -126,12 +123,14 @@ function NavbarMobileMenu(props) {
 export default function Navigation() {
   return (
     <nav className="navbar">
-      <div className="navbar-desktop">
-        <NavbarDesktop/>
-      </div>
-      <div className="navbar-mobile">
-        <NavbarMobile />
-      </div>
+      <Container>
+        <div className="navbar-desktop">
+          <NavbarDesktop/>
+        </div>
+        <div className="navbar-mobile">
+          <NavbarMobile />
+        </div>
+      </Container>
     </nav>
   )
 }
