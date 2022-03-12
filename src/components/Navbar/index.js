@@ -121,8 +121,9 @@ function NavbarMobileMenu(props) {
 }
 
 export default function Navigation() {
+  const [state] = useContext(AppContext)
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${state.theme}`}>
       <Container>
         <div className="navbar-desktop">
           <NavbarDesktop/>
