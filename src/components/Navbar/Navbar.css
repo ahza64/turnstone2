@@ -72,10 +72,11 @@
 
 .navbar-icon {
   display: flex;
+  align-items: center;
 }
 
-.theme-switch {
-  padding-left: 12px;
+.turn-stone-label {
+  margin-left: 12px;
 }
 
 .turn-stone {
@@ -86,31 +87,31 @@
 }
 
 .turn-stone.dark {
-  animation: flipDark 1.5s ease forwards;
+  animation: flipDark .5s ease forwards;
 }
 
 @keyframes flipDark {
   from {
-    transform: rotateX(-0deg);
+    transform: rotateX(180deg);
     background-color: black;
   }
   to {
-    transform: rotateX(-360deg);
+    transform: rotateX(360deg);
     background-color: white;
   }
 }
 
 .turn-stone.light {
-  animation: flipLight 1.5s ease forwards;
+  animation: flipLight .5s ease forwards;
 }
 
 @keyframes flipLight {
   from {
-    transform: rotateX(-0deg);
+    transform: rotateX(0deg);
     background-color: white;
   }
   to {
-    transform: rotateX(-360deg);
+    transform: rotateX(180deg);
     background-color: black;
   }
 }

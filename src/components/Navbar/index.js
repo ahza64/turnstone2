@@ -14,59 +14,43 @@ function NavbarDesktop() {
   )
 }
 
-function ThemeSwitch() {
-  const [state] = useContext(AppContext)
-  const { toggleTheme } = useThemeControl()
-  const nextTheme = state.theme === "dark" ? "light" : "dark"
-  const isChecked = state.theme === "dark"
-  return (
-    <Checkbox toggle onChange={toggleTheme} checked={isChecked}/>
-  )
-}
-
 function TurnStone() {
   const { toggleTheme } = useThemeControl()
-  const [state] = useContext(AppContext)
+  const [context] = useContext(AppContext)
   return (
-    <div onClick={toggleTheme}>
-      <img className={`turn-stone ${state.theme}`} src={stoneImg} alt=""/>
-    </div>
+      <img className={`turn-stone ${context.theme}`}  onClick={toggleTheme} src={stoneImg} alt="TurnStone"/>
   )
 }
 
 function NavbarLinksDesktop() {
-  const [state] = useContext(AppContext)
-  const themeMode = state.theme.charAt(0).toUpperCase() + state.theme.slice(1)
+  const [context] = useContext(AppContext)
+  const themeMode = context.theme.charAt(0).toUpperCase() + context.theme.slice(1)
   return (
     <div className="navbar-links-wrapper">
-
       <div className="navbar-icon">
         <TurnStone/>
-        <div>
-          TurnStone {themeMode}
-        </div>
-        <div className="theme-switch">
-          <ThemeSwitch/>
+        <div className="turn-stone-label">
+           The Magic TurnStone
         </div>
       </div>
       <div className="nav-links-wrapper">
         <div className="navlink">
           <Link to="/">
-            <Button variant="outline-secondary">
+            <Button basic color='grey'>
               Home
             </Button>
           </Link>
         </div>
         <div className="navlink">
           <Link to="/resume">
-            <Button variant="outline-secondary">
+            <Button basic color="grey">
               Resume
             </Button>
           </Link>
         </div>
         <div className="navlink">
           <Link to="/projects">
-            <Button>
+            <Button basic color='grey'>
               Projects
             </Button>
           </Link>
@@ -134,9 +118,9 @@ function NavbarMobileMenu(props) {
 }
 
 export default function Navigation() {
-  const [state] = useContext(AppContext)
+  const [context] = useContext(AppContext)
   return (
-    <nav className={`navbar ${state.theme}`}>
+    <nav className={`navbar ${context.theme}`}>
       <Container>
         <div className="navbar-desktop">
           <NavbarDesktop/>

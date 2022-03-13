@@ -56,8 +56,12 @@
   }
 }
 
-.tron-linkedin {
+.tron-linkedin.light {
   color: black;
+}
+
+.tron-linkedin.dark {
+  color: white;
 }
 
 .tron-linkedin-control {
@@ -73,8 +77,12 @@
   }
 }
 
-.tron-github {
+.tron-github.light {
   color: black;
+}
+
+.tron-github.dark {
+  color: white;
 }
 
 .tron-github-control {

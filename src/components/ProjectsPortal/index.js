@@ -6,13 +6,13 @@ import "./ProjectsPortal.css"
 function CheckBox(props) {
   return (
     <>
-      <input type="checkbox" onChange={() => props.onHandleChange()}/>{` `}
+      <input className="checkbox1" type="checkbox" onChange={() => props.onHandleChange()}/>{` `}
       <label htmlFor="recruiter">{` I am a technical recruiter.`}</label>
     </>
   )
 }
 
-function ModalExampleBasic() {
+function EmailModal(props) {
   const [open, setOpen] = useState(false)
 
   return (
@@ -22,23 +22,20 @@ function ModalExampleBasic() {
       onOpen={() => setOpen(true)}
       open={open}
       size='small'
-      trigger={<Button>Basic Modal</Button>}
+      trigger={<Button basic color="grey" disabled={!props.isChecked}>Email</Button>}
     >
       <Header icon>
         <Icon name='archive' />
         Reach me at my personal email
       </Header>
       <Modal.Content>
-        <h1>
+        <h1 className="email">
           justinmichaelpettit@gmail.com
         </h1>
       </Modal.Content>
       <Modal.Actions>
-        <Button basic color='red' inverted onClick={() => setOpen(false)}>
-          <Icon name='remove' /> No
-        </Button>
         <Button color='green' inverted onClick={() => setOpen(false)}>
-          <Icon name='checkmark' /> Yes
+          <Icon name='checkmark' /> Close
         </Button>
       </Modal.Actions>
     </Modal>
@@ -63,7 +60,7 @@ export default function ProjectsPortal() {
         <CheckBox onHandleChange={handleChange} isChecked={isChecked}/>
       </div>
       <div>
-      <ModalExampleBasic/>
+        <EmailModal isChecked={isChecked}/>
       </div>
     </div>
   )

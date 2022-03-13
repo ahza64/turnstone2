@@ -15,4 +15,13 @@
 
 .checkbox-wrapper {
   margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.checkbox1 {
+  cursor: pointer;
+}
+
+.email {
+  text-align: center;
 }

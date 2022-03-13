@@ -1,17 +1,17 @@
-import { Suspense } from 'react'
+import { Suspense, useContext } from 'react'
+import { Container } from "semantic-ui-react"
+import { AppContext } from "../../context"
+
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import { SiGithub, SiLinkedin } from "react-icons/si"
 import Model from './3dselfmodel'
 
-import { Container } from "semantic-ui-react"
-
-
 import tronitronData from "./tronitronData"
 import './Tronitron.css'
 
-
 export default function Tronitron() {
+  const [context] = useContext(AppContext)
   return (
     <div className="tronitron-wrapper">
       <div className="avatar-grid">
@@ -24,12 +24,12 @@ export default function Tronitron() {
           </div>
           <div className="avatar-social">
             <div className="tron-linkedin-control">
-              <a className="tron-linkedin" target="__blank" href="https://www.linkedin.com/in/justinmichaelpettit/">
+              <a className={`tron-linkedin ${context.theme}`} target="__blank" href="https://www.linkedin.com/in/justinmichaelpettit/">
                 <SiLinkedin/>
               </a>
             </div>
             <div className="tron-github-control">
-              <a className="tron-github" target="__blank" href="https://github.com/ahza64">
+              <a className={`tron-github ${context.theme}`} target="__blank" href="https://github.com/ahza64">
                 <SiGithub/>
               </a>
             </div>
