@@ -5,6 +5,7 @@ import { AppContext } from "../../context"
 import useThemeControl from "../../hooks/useThemeControl"
 import { Button, Checkbox, Container } from "semantic-ui-react"
 
+import stoneImg from "./stone2.png"
 import "./Navbar.css"
 
 function NavbarDesktop() {
@@ -23,12 +24,24 @@ function ThemeSwitch() {
   )
 }
 
+function TurnStone() {
+  const { toggleTheme } = useThemeControl()
+  const [state] = useContext(AppContext)
+  return (
+    <div onClick={toggleTheme}>
+      <img className={`turn-stone ${state.theme}`} src={stoneImg} alt=""/>
+    </div>
+  )
+}
+
 function NavbarLinksDesktop() {
   const [state] = useContext(AppContext)
   const themeMode = state.theme.charAt(0).toUpperCase() + state.theme.slice(1)
   return (
     <div className="navbar-links-wrapper">
+
       <div className="navbar-icon">
+        <TurnStone/>
         <div>
           TurnStone {themeMode}
         </div>

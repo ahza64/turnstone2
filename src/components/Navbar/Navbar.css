@@ -1,6 +1,6 @@
 .navbar {
   box-shadow: 0px 2px #cacaca;
-  padding: 16px 0;
+  padding: 8px 0;
 }
 
 .navbar.dark {
@@ -75,5 +75,42 @@
 }
 
 .theme-switch {
-  padding-left: 12px
+  padding-left: 12px;
+}
+
+.turn-stone {
+  border-radius: 4px;
+  max-height: 32px;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.turn-stone.dark {
+  animation: flipDark 1.5s ease forwards;
+}
+
+@keyframes flipDark {
+  from {
+    transform: rotateX(-0deg);
+    background-color: black;
+  }
+  to {
+    transform: rotateX(-360deg);
+    background-color: white;
+  }
+}
+
+.turn-stone.light {
+  animation: flipLight 1.5s ease forwards;
+}
+
+@keyframes flipLight {
+  from {
+    transform: rotateX(-0deg);
+    background-color: white;
+  }
+  to {
+    transform: rotateX(-360deg);
+    background-color: black;
+  }
 }

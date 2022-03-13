@@ -26,13 +26,12 @@ function ModalExampleBasic() {
     >
       <Header icon>
         <Icon name='archive' />
-        Archive Old Messages
+        Reach me at my personal email
       </Header>
       <Modal.Content>
-        <p>
-          Your inbox is getting full, would you like us to enable automatic
-          archiving of old messages?
-        </p>
+        <h1>
+          justinmichaelpettit@gmail.com
+        </h1>
       </Modal.Content>
       <Modal.Actions>
         <Button basic color='red' inverted onClick={() => setOpen(false)}>
