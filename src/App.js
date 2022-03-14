@@ -1,6 +1,6 @@
 import Tronitron from './components/Tronitron'
 import CardCarousel from './components/CardCarousel'
-import ProjectsPortal from './components/ProjectsPortal'
+import EmailPortal from './components/EmailPortal'
 import Projects from './pages/Projects'
 import ResumePage from './pages/Resume'
 import { Routes, Route } from "react-router-dom";
@@ -13,7 +13,7 @@ function Home() {
     <>
       <Tronitron/>
       <CardCarousel/>
-      <ProjectsPortal/>
+      <EmailPortal/>
     </>
   )
 }

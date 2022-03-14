@@ -1,6 +1,10 @@
 .navbar {
-  box-shadow: 0px 2px rgba(0, 0, 0, 0.2);
-  padding: 16px 0;
+  box-shadow: 0px 2px #cacaca;
+  padding: 8px 0;
+}
+
+.navbar.dark {
+  box-shadow: 0px 2px blue;
 }
 
 .navbar-desktop {
@@ -23,6 +27,13 @@
 }
 
 .navbar-links-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%
+}
+
+.navbar-links-wrapper.dark {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -61,8 +72,57 @@
 
 .navbar-icon {
   display: flex;
+  align-items: center;
 }
 
-.theme-switch {
-  padding-left: 12px
+.turn-stone-label {
+  margin-left: 12px;
+}
+
+.turn-stone {
+  border-radius: 4px;
+  max-height: 36px;
+  cursor: pointer;
+  border: none;
+}
+
+.turn-stone-img {
+  border-radius: 4px;
+  max-height: 36px;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.turn-stone.dark {
+  animation: flipDark .5s ease forwards;
+}
+
+@keyframes flipDark {
+  from {
+    transform: rotateX(180deg);
+    background-color: black;
+  }
+  to {
+    transform: rotateX(360deg);
+    background-color: white;
+  }
+}
+
+.turn-stone.light {
+  animation: flipLight .5s ease forwards;
+}
+
+@keyframes flipLight {
+  from {
+    transform: rotateX(0deg);
+    background-color: white;
+  }
+  to {
+    transform: rotateX(180deg);
+    background-color: black;
+  }
+}
+
+.ui.basic.grey.button:hover {
+  background-color: grey;
 }

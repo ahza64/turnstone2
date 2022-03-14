@@ -56,12 +56,24 @@
   }
 }
 
-.tron-linkedin {
+.tron-linkedin.light {
   color: black;
 }
 
+.tron-linkedin.dark {
+  color: white;
+}
+
+.tron-linkedin.light:hover {
+  color: black;
+}
+
+.tron-linkedin.dark:hover {
+  color: white;
+}
+
 .tron-linkedin-control {
-  animation: rotate 3s ease-in forwards;
+  animation: rotate 3s ease forwards;
 }
 
 @keyframes rotate {
@@ -73,12 +85,24 @@
   }
 }
 
-.tron-github {
+.tron-github.light {
   color: black;
 }
 
+.tron-github.dark {
+  color: white;
+}
+
+.tron-github.light:hover {
+  color: black;
+}
+
+.tron-github.dark:hover {
+  color: white;
+}
+
 .tron-github-control {
-  animation: rotateGit 3s ease-in forwards;
+  animation: rotateGit 3s ease forwards;
 }
 
 @keyframes rotateGit {
@@ -88,10 +112,6 @@
   to {
     transform: rotate(-1080deg);
   }
-}
-
-.tron-linkedin:hover {
-  color: black;
 }
 
 .tron-github:hover {

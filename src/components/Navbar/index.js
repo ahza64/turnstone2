@@ -1,9 +1,11 @@
 import { useState, useEffect, useContext } from 'react'
-import { Container, Button, Form } from "react-bootstrap"
-import { Link, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import Hamburger from "hamburger-react"
 import { AppContext } from "../../context"
 import useThemeControl from "../../hooks/useThemeControl"
+import { Button, Checkbox, Container } from "semantic-ui-react"
+
+import stoneImg from "./stone2.png"
 import "./Navbar.css"
 
 function NavbarDesktop() {
@@ -12,52 +14,48 @@ function NavbarDesktop() {
   )
 }
 
-function ThemeSwitch() {
-  const [state] = useContext(AppContext)
+function TurnStone() {
   const { toggleTheme } = useThemeControl()
-  const nextTheme = state.theme === "dark" ? "light" : "dark"
-  const isChecked = state.theme === "dark"
+  const [context] = useContext(AppContext)
   return (
-    <Form>
-      <Form.Check onChange={toggleTheme} checked={isChecked} type="switch" />
-    </Form>
+    <button onClick={toggleTheme} className={`turn-stone ${context.theme}`}>
+      <img className="turn-stone-img" src={stoneImg} alt="TurnStone"/>
+    </button>
   )
 }
 
-function NavbarLinksDesktop() {
-  const [state] = useContext(AppContext)
-  const themeMode = state.theme.charAt(0).toUpperCase() + state.theme.slice(1)
+function NavbarLinksDesktop(props) {
+  const [context] = useContext(AppContext)
+  const themeMode = context.theme.charAt(0).toUpperCase() + context.theme.slice(1)
+
+  const navigate = useNavigate()
+  const navigateRoute = route => {
+    navigate(route)
+  }
+
   return (
     <div className="navbar-links-wrapper">
       <div className="navbar-icon">
-        <div>
-          TurnStone {/*{themeMode}*/}
+        <TurnStone/>
+        <div className="turn-stone-label">
+           The Magic TurnStone
         </div>
-        {/*<div className="theme-switch">
-          <ThemeSwitch/>
-        </div>*/}
       </div>
       <div className="nav-links-wrapper">
         <div className="navlink">
-          <Link to="/">
-            <Button variant="outline-secondary">
+            <Button onClick={() => navigateRoute('/')}>
               Home
             </Button>
-          </Link>
         </div>
         <div className="navlink">
-          <Link to="/resume">
-            <Button variant="outline-secondary">
+            <Button onClick={() => navigateRoute('/resume')}>
               Resume
             </Button>
-          </Link>
         </div>
         <div className="navlink">
-          <Link to="/projects">
-            <Button variant="outline-secondary">
+            <Button onClick={() => navigateRoute('/projects')}>
               Projects
             </Button>
-          </Link>
         </div>
       </div>
     </div>
@@ -122,8 +120,9 @@ function NavbarMobileMenu(props) {
 }
 
 export default function Navigation() {
+  const [context] = useContext(AppContext)
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${context.theme}`}>
       <Container>
         <div className="navbar-desktop">
           <NavbarDesktop/>
