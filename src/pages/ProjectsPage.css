@@ -18,6 +18,12 @@
   align-items: center;
 }
 
+.project-content h4 {
+  font-size: 32px;
+  text-transform: uppercase;
+
+}
+
 .project-btn {
   border: none;
   border-radius: 4px;
