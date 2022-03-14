@@ -81,7 +81,14 @@
 
 .turn-stone {
   border-radius: 4px;
-  max-height: 32px;
+  max-height: 36px;
+  cursor: pointer;
+  border: none;
+}
+
+.turn-stone-img {
+  border-radius: 4px;
+  max-height: 36px;
   padding: 4px;
   cursor: pointer;
 }
@@ -114,4 +121,8 @@
     transform: rotateX(180deg);
     background-color: black;
   }
+}
+
+.ui.basic.grey.button:hover {
+  background-color: grey;
 }

@@ -64,6 +64,14 @@
   color: white;
 }
 
+.tron-linkedin.light:hover {
+  color: black;
+}
+
+.tron-linkedin.dark:hover {
+  color: white;
+}
+
 .tron-linkedin-control {
   animation: rotate 3s ease forwards;
 }
@@ -85,6 +93,14 @@
   color: white;
 }
 
+.tron-github.light:hover {
+  color: black;
+}
+
+.tron-github.dark:hover {
+  color: white;
+}
+
 .tron-github-control {
   animation: rotateGit 3s ease forwards;
 }
@@ -96,10 +112,6 @@
   to {
     transform: rotate(-1080deg);
   }
-}
-
-.tron-linkedin:hover {
-  color: black;
 }
 
 .tron-github:hover {

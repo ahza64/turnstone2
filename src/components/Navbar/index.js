@@ -18,13 +18,21 @@ function TurnStone() {
   const { toggleTheme } = useThemeControl()
   const [context] = useContext(AppContext)
   return (
-      <img className={`turn-stone ${context.theme}`}  onClick={toggleTheme} src={stoneImg} alt="TurnStone"/>
+    <button onClick={toggleTheme} className={`turn-stone ${context.theme}`}>
+      <img className="turn-stone-img" src={stoneImg} alt="TurnStone"/>
+    </button>
   )
 }
 
-function NavbarLinksDesktop() {
+function NavbarLinksDesktop(props) {
   const [context] = useContext(AppContext)
   const themeMode = context.theme.charAt(0).toUpperCase() + context.theme.slice(1)
+
+  const navigate = useNavigate()
+  const navigateRoute = route => {
+    navigate(route)
+  }
+
   return (
     <div className="navbar-links-wrapper">
       <div className="navbar-icon">
@@ -35,25 +43,19 @@ function NavbarLinksDesktop() {
       </div>
       <div className="nav-links-wrapper">
         <div className="navlink">
-          <Link to="/">
-            <Button basic color='grey'>
+            <Button onClick={() => navigateRoute('/')}>
               Home
             </Button>
-          </Link>
         </div>
         <div className="navlink">
-          <Link to="/resume">
-            <Button basic color="grey">
+            <Button onClick={() => navigateRoute('/resume')}>
               Resume
             </Button>
-          </Link>
         </div>
         <div className="navlink">
-          <Link to="/projects">
-            <Button basic color='grey'>
+            <Button onClick={() => navigateRoute('/projects')}>
               Projects
             </Button>
-          </Link>
         </div>
       </div>
     </div>
