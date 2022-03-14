@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from 'react'
-import { Link, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import Hamburger from "hamburger-react"
 import { AppContext } from "../../context"
 import useThemeControl from "../../hooks/useThemeControl"

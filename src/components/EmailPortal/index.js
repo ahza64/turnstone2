@@ -1,7 +1,8 @@
 import { useState } from "react"
 import { Modal, Button, Header, Icon } from "semantic-ui-react"
+import { useNavigate } from "react-router-dom"
 
-import "./ProjectsPortal.css"
+import "./EmailPortal.css"
 
 function CheckBox(props) {
   return (
@@ -14,6 +15,11 @@ function CheckBox(props) {
 
 function EmailModal(props) {
   const [open, setOpen] = useState(false)
+  const navigate = useNavigate()
+  const navigateRoute = route => {
+    setOpen(false)
+    navigate(route)
+  }
 
   return (
     <Modal
@@ -34,8 +40,14 @@ function EmailModal(props) {
         </h1>
       </Modal.Content>
       <Modal.Actions>
-        <Button color='green' inverted onClick={() => setOpen(false)}>
-          <Icon name='checkmark' /> Close
+        <Button color='grey' inverted onClick={() => navigateRoute('/')}>
+          Home
+        </Button>
+        <Button color='grey' inverted onClick={() => navigateRoute('/resume')}>
+          Resume
+        </Button>
+        <Button color='grey' inverted onClick={() => navigateRoute('/projects')}>
+          Projects
         </Button>
       </Modal.Actions>
     </Modal>

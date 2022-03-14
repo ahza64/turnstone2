@@ -10,14 +10,13 @@ function ArtAPI() {
   return (
     <div className="under-construction">
       <h1>
-        Under Construction
+        Art API Project Is Under Construction
       </h1>
     </div>
   )
 }
 
 function ProjectPageContent(props) {
-
   return (
     <div className="project-content">
       <div>
@@ -79,13 +78,13 @@ export default function ProjectsPage() {
   const [state, setState] = useState({...intialState})
   const toggleProject = (name) => {
     const [selected] = state.projectsData.filter(project => project.name === name)
-    console.log(selected);
+
     setState((prevState) => ({
       ...prevState,
       selected
     }))
   }
-  console.log(state);
+
   return (
     <div className="projects-page-wrapper">
       <div className="project-navigation">
@@ -100,17 +99,4 @@ export default function ProjectsPage() {
       </div>
     </div>
   )
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
