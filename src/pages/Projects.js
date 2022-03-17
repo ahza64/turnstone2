@@ -1,20 +1,11 @@
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
+import { Input, Button, Modal, Image } from "semantic-ui-react"
 import { MdOutlineConstruction } from "react-icons/md"
 import reactor from "./reactor.png"
 import lion from "./lion.png"
 
 import projectsData from "./projectsData.js"
 import "./ProjectsPage.css"
-
-function ArtAPI() {
-  return (
-    <div className="under-construction">
-      <h1>
-        Art API Project Is Under Construction, see above links for earlier renditions of skills
-      </h1>
-    </div>
-  )
-}
 
 function ProjectPageContent(props) {
   const imgPath = props.image
@@ -45,12 +36,200 @@ function ProjectPageContent(props) {
           {props.description}
         </p>
       </div>
-      <div>
-        <a href={props.href}>
-          Click to be redirected
-        </a>
-      </div>
+      {props.href && (
+        <div>
+          <a target="__blank" href={props.href}>
+            Click to launch project
+          </a>
+        </div>
+      )}
     </div>
+  )
+}
+
+function SearchComponent(props) {
+  return (
+    <Input
+      placeholder='Search...'
+      onChange={props.onHandleSearchChange}
+      size="massive"
+    />
+  )
+}
+
+function ellipsify(str, maxLength) {
+  if (str.length > maxLength) {
+    return str.substring(0, maxLength) + "..."
+  }
+  return str
+}
+
+function ArtCardItem(props) {
+  const [data, setData] = useState(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(false)
+
+  useEffect(() => {
+    const baseUrl = `https://collectionapi.metmuseum.org/public/collection/v1/objects/${props.itemID}`
+    fetch(baseUrl, {method: "GET"})
+    .then(res => {
+      if (res.ok) {
+        return res.json()
+      }
+      throw res
+    })
+    .then((data) => {
+      setData(data)
+    })
+    .catch((err) => {
+      setError(err)
+    })
+    .finally(() => {
+      setLoading(false)
+    })
+  }, [props.itemID])
+  console.log("data", data);
+
+  return (
+    <div>
+    { data &&
+      <div  className="art-card">
+        <div>
+          <h1>
+            {ellipsify(data.title, 20)}
+          </h1>
+        </div>
+        <div>
+          {data.objectDate}
+        </div>
+        <div>
+          <h4>
+            {data.repository}
+          </h4>
+        </div>
+        <div>
+          <ArtModal data={data}/>
+        </div>
+      </div>
+    }
+    </div>
+  )
+}
+
+function ArtModal(props) {
+  const [open, setOpen] = useState(false)
+
+  return (
+    <Modal
+      onClose={() => setOpen(false)}
+      onOpen={() => setOpen(true)}
+      open={open}
+      trigger={<Button fluid size="mini">More...</Button>}
+    >
+      <Modal.Header>
+        {props.data.title}
+      </Modal.Header>
+      <Modal.Content>
+        <div className="modal-art-grid">
+          <div>
+            {props.data.primaryImage ? (
+              <Image size="medium" src={props.data.primaryImage}/>
+            ) : (
+              <div>
+                No Image
+              </div>
+            )}
+          </div>
+          <div className="modal-text">
+            <div>
+              <h3>
+                {props.data.creditLine}
+              </h3>
+            </div>
+            <div>
+            {props.data.constituents && props.data.constituents.map((item, idx) => (
+              <div key={idx}>
+                <strong>
+                  role: {item.role} name: {item.name}
+                </strong>
+              </div>
+            ))}
+            </div>
+          </div>
+        </div>
+      </Modal.Content>
+      <Modal.Actions>
+        <Button onClick={() => setOpen(false)}>Close</Button>
+      </Modal.Actions>
+    </Modal>
+  )
+}
+
+function ArtAPI() {
+  const [data, setData] = useState(null)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(false)
+  const [searchVal, setSearchVal] = useState("")
+
+  const handleSearchChange = (e) => {
+    setSearchVal(e.target.value);
+  }
+
+  const onSubmitSearch = () => {
+    fetchSetData(searchVal)
+  }
+
+  const fetchSetData = (query) => {
+    const baseUrl = `https://collectionapi.metmuseum.org/public/collection/v1/search?q=${query}`
+    fetch(baseUrl, {method: "GET"})
+    .then(res => {
+      if (res.ok) {
+        return res.json()
+      }
+      throw res
+    })
+    .then((data) => {
+      const data1 = data.objectIDs.slice(0, 20)
+      data.objectIDs = data1
+      data.total = data.objectIDs.length
+      setData(data)
+    })
+    .catch((err) => {
+      setError(err)
+    })
+    .finally(() => {
+      setLoading(false)
+    })
+  }
+
+  return (
+    <>
+      <ProjectPageContent
+        title="Art API"
+        image="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=445&q=80"
+        description="Art API"
+
+      />
+      <div className="search-form">
+        <div>
+          <SearchComponent
+            onHandleSearchChange={handleSearchChange}
+            />
+        </div>
+        <div>
+          <Button size="massive" onClick={onSubmitSearch}>
+            Submit
+          </Button>
+        </div>
+      </div>
+      {data && (
+        <div className="art-grid">
+          {data.objectIDs.map((item, idx) => (
+            <ArtCardItem key={idx} itemID={item} />
+          ))}
+        </div>
+      )}
+    </>
   )
 }
 

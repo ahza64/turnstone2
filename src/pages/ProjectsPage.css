@@ -47,3 +47,44 @@
 .project-hero:hover {
   max-height: 800px;
 }
+
+.search-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 16px 0;
+}
+
+.search-form div {
+  margin: 0 8px;
+}
+
+.art-card {
+  box-shadow: 2px 2px #cacaca, -2px 0 .4em #cacaca;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  margin: 8px 0;
+}
+
+.art-grid {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  column-gap: 16px;
+  row-gap: 16px;
+}
+
+@media (max-width: 750px) {
+  .art-grid {
+    grid-template-columns: repeat(1, auto);
+  }
+}
+
+.modal-art-grid {
+  display: flex;
+}
+
+.modal-text {
+  padding: 16px;
+}
