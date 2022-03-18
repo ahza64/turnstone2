@@ -24,7 +24,11 @@ function App() {
       <Route path="/" element={<Home/>}/>
       <Route path="/resume" element={<ResumePage/>}/>
       <Route path="/projects" element={<Projects/>}/>
-      <Route path="*" element={<Home/>}/>
+      <Route path="*" element={
+        <main style={{ padding: "1rem" }}>
+          <p>There's nothing at this route!</p>
+        </main>
+      }/>
     </Routes>
   );
 }
