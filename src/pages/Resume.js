@@ -13,9 +13,9 @@ export default function ResumePage() {
         </h4>
       </div>
       <div>
-        <button href="https://github.com/ahza64/turnstone2/raw/master/resume%20hooks%2012_6%20(2).docx">
+        <a href="https://github.com/ahza64/turnstone2/raw/master/resume%20hooks%2012_6%20(2).docx">
           Download Resume
-        </button>
+        </a>
       </div>
     </div>
   )

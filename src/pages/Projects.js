@@ -208,7 +208,6 @@ function ArtAPI() {
         title="Art API"
         image="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=445&q=80"
         description="Art API"
-
       />
       <div className="search-form">
         <div>
