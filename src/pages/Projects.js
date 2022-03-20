@@ -3,6 +3,7 @@ import { Input, Button, Modal, Image } from "semantic-ui-react"
 import { MdOutlineConstruction } from "react-icons/md"
 import reactor from "./reactor.png"
 import lion from "./lion.png"
+import yellowGraph from "../images/dataviz/yellowGraph.png"
 
 import projectsData from "./projectsData.js"
 import "./ProjectsPage.css"
@@ -88,7 +89,6 @@ function ArtCardItem(props) {
       setLoading(false)
     })
   }, [props.itemID])
-  console.log("data", data);
 
   return (
     <div>
@@ -207,7 +207,7 @@ function ArtAPI() {
       <ProjectPageContent
         title="Art API"
         image="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=445&q=80"
-        description=""
+        description="This component bakedin Application (“feature”) is built into this portfolio website. Mostly showcasing fetch useEffet with a bunch of useState and data handling and multiple React.js functionality structures, I used the boston met museum’s API to request up to 20 data selections from a search query, to fill a list of art piece show cards with name and date with a button to open a modal displaying an image and maker and donator."
       />
       <div className="search-form">
         <div>
@@ -237,7 +237,7 @@ function Reactor() {
     <ProjectPageContent
       title="Reactor App (hooks only)"
       image="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-      description="using custom react hooks and pubsub, post blogs and give emoji reactions all tagged with your user name."
+      description="Using custom react hooks and pubsub, post blogs and give emoji reactions all tagged with your username, showcasing the reducer pattern, replacing the need for the Redux library. There is no backend store, but you can ping multiple user names and interact and see the frontend Reducer storage pattern in action."
       href="https://vibrant-darwin-54679b.netlify.app/"
     />
   )
@@ -246,10 +246,10 @@ function Reactor() {
 function DataViz() {
   return (
     <ProjectPageContent
-      title="DataViz (interm with home app external APIs)"
-      image="https://images.unsplash.com/photo-1542903660-eedba2cda473?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-      description="actually a home page app for the time being, several react custom hooks component features divided by line breaks. dynamic data feed controls. etc..."
-      href="https://relaxed-hypatia-11c312.netlify.app/"
+      title="Data Viz"
+      image={yellowGraph}
+      description="This is a mostly backend (fullstack) application I’ve built. This version uses React.js OOP, Charts.js, node.js, express.js, mongoose, mongoDB and mongoLabs, using the wargaming API. Sadly due to a microsoft buyout and mongodb/mongolabs migration, this application is under construction. The link will take you to the github repository where you can see the micro servers I built using mongo’s parser pipeline. The new application is being built on React Hooks."
+      href="https://github.com/ahza64/wows-passel"
     />
   )
 }
@@ -268,6 +268,7 @@ const intialState = {
 export default function ProjectsPage() {
   const [state, setState] = useState({...intialState})
   const toggleProject = (name) => {
+
     const [selected] = state.projectsData.filter(project => project.name === name)
 
     setState((prevState) => ({
@@ -280,11 +281,12 @@ export default function ProjectsPage() {
     <div className="projects-page-wrapper">
       <div className="project-navigation">
         {projectsData.map((project) => (
-          <button className="project-btn" key={project.id} onClick={() => toggleProject(project.name)}>
+          <button className="project-btn" active={state.selected.name === project.name ? "true" : "false"} key={project.id} onClick={() => toggleProject(project.name)}>
             {project.name}
           </button>
         ))}
       </div>
+      <div><small>(unlike the navbar, these are view seletor buttons not powered with react-router)</small></div>
       <div>
         {projectsMap[state.selected.name]}
       </div>

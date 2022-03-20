@@ -4,6 +4,9 @@
 
 .projects-page-wrapper {
   padding: 0 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .project-navigation {
@@ -25,11 +28,24 @@
 }
 
 .project-btn {
-  border: none;
+  border: 2px solid lightgrey;
+  background-color: white;
   border-radius: 4px;
   cursor: pointer;
   margin: 16px;
   padding: 8px;
+}
+
+.project-btn:hover {
+  background-color: lightgrey;
+}
+
+.project-btn[active="true"] {
+  background-color: lightgrey;
+}
+
+.project-btn.dark {
+  color: white;
 }
 
 .under-construction {
