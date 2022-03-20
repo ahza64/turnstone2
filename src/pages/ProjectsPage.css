@@ -40,19 +40,18 @@
   align-items: center;
 }
 
-.project-hero {
-  max-height: 300px;
-}
-
-.project-hero:hover {
-  max-height: 800px;
-}
-
 .search-form {
   display: flex;
   flex-direction: row;
   justify-content: center;
   margin: 16px 0;
+}
+
+@media (max-width: 450px) {
+  .search-form {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .search-form div {
