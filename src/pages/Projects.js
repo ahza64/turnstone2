@@ -13,6 +13,7 @@ function ProjectPageContent(props) {
   const styles = {
     heroBackground: {
       backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.44), rgba(0, 0, 0, 0.9)), url(${imgPath})`,
+      backgroundPosition: "center",
       minHeight: "200px",
       minWidth: "100vw",
       backgroundSize: "cover",
@@ -32,7 +33,14 @@ function ProjectPageContent(props) {
           </h4>
         </div>
       </div>
-      <div>
+      <div className="project-content-description-title">
+        <h2>
+          <u>
+            Description
+          </u>
+        </h2>
+      </div>
+      <div className="project-content-description">
         <p>
           {props.description}
         </p>
@@ -40,7 +48,7 @@ function ProjectPageContent(props) {
       {props.href && (
         <div>
           <a target="__blank" href={props.href}>
-            Click to launch project
+            Click to {props.isLive ? "redirect": "launch project"}
           </a>
         </div>
       )}
@@ -224,7 +232,7 @@ function ArtAPI() {
       {data && (
         <div className="art-grid">
           {data.objectIDs.map((item, idx) => (
-            <ArtCardItem key={idx} itemID={item} />
+            <ArtCardItem key={item} itemID={item} />
           ))}
         </div>
       )}
@@ -250,6 +258,7 @@ function DataViz() {
       image={yellowGraph}
       description="This is a mostly backend (fullstack) application I’ve built. This version uses React.js OOP, Charts.js, node.js, express.js, mongoose, mongoDB and mongoLabs, using the wargaming API. Sadly due to a microsoft buyout and mongodb/mongolabs migration, this application is under construction. The link will take you to the github repository where you can see the micro servers I built using mongo’s parser pipeline. The new application is being built on React Hooks."
       href="https://github.com/ahza64/wows-passel"
+      isLive={true}
     />
   )
 }

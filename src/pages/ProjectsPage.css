@@ -24,7 +24,16 @@
 .project-content h4 {
   font-size: 32px;
   text-transform: uppercase;
+}
 
+.project-content-description {
+  margin: 16px;
+  padding: 8px;
+  font-size: 18px;
+}
+
+.project-content-description-title {
+  margin-top: 32px;
 }
 
 .project-btn {
