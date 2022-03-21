@@ -215,7 +215,7 @@ function ArtAPI() {
       <ProjectPageContent
         title="Art API"
         image="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=445&q=80"
-        description="This component bakedin Application (“feature”) is built into this portfolio website. Mostly showcasing fetch useEffet with a bunch of useState and data handling and multiple React.js functionality structures, I used the boston met museum’s API to request up to 20 data selections from a search query, to fill a list of art piece show cards with name and date with a button to open a modal displaying an image and maker and donator."
+        description="This component bakedin Application (“feature”) is built into this portfolio website. Mostly showcasing fetch useEffect with a bunch of useState and data handling and multiple React.js functionality structures, I used the boston met museum’s API to request up to 20 data selections from a search query, to fill a list of art piece show cards with name and date with a button to open a modal displaying an image and maker and donator."
       />
       <div className="search-form">
         <div>
