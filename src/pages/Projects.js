@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect } from "react"
 import { Input, Button, Modal, Image } from "semantic-ui-react"
 import { MdOutlineConstruction } from "react-icons/md"
 import reactor from "./reactor.png"
@@ -62,6 +62,7 @@ function SearchComponent(props) {
       placeholder='Search...'
       onChange={props.onHandleSearchChange}
       size="massive"
+      value={props.searchVal}
     />
   )
 }
@@ -77,6 +78,7 @@ function ArtCardItem(props) {
   const [data, setData] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(false)
+  const [hasNoResults, setHasNoResults] = useState(null)
 
   useEffect(() => {
     const baseUrl = `https://collectionapi.metmuseum.org/public/collection/v1/objects/${props.itemID}`
@@ -91,6 +93,7 @@ function ArtCardItem(props) {
       setData(data)
     })
     .catch((err) => {
+      setHasNoResults(true)
       setError(err)
     })
     .finally(() => {
@@ -100,6 +103,11 @@ function ArtCardItem(props) {
 
   return (
     <div>
+    { hasNoResults &&
+      <div className="art-no-results">
+        The API gave back an error for this art Piece
+      </div>
+    }
     { data &&
       <div  className="art-card">
         <div>
@@ -167,7 +175,7 @@ function ArtModal(props) {
         </div>
       </Modal.Content>
       <Modal.Actions>
-        <Button onClick={() => setOpen(false)}>Close</Button>
+        <button className="project-btn" onClick={() => setOpen(false)}>Close</button>
       </Modal.Actions>
     </Modal>
   )
@@ -178,6 +186,12 @@ function ArtAPI() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(false)
   const [searchVal, setSearchVal] = useState("")
+  const [hasNoResults, setHasNoResults] = useState(null)
+
+  const clearSearchResults = () => {
+    setHasNoResults(null)
+    setSearchVal('')
+  }
 
   const handleSearchChange = (e) => {
     setSearchVal(e.target.value);
@@ -188,6 +202,8 @@ function ArtAPI() {
   }
 
   const fetchSetData = (query) => {
+    setLoading(true)
+    setData(null)
     const baseUrl = `https://collectionapi.metmuseum.org/public/collection/v1/search?q=${query}`
     fetch(baseUrl, {method: "GET"})
     .then(res => {
@@ -197,10 +213,15 @@ function ArtAPI() {
       throw res
     })
     .then((data) => {
-      const data1 = data.objectIDs.slice(0, 20)
-      data.objectIDs = data1
-      data.total = data.objectIDs.length
-      setData(data)
+      if (data.total === 0) {
+        setHasNoResults(true)
+      } else {
+        const data1 = data.objectIDs.slice(0, 20)
+        data.objectIDs = data1
+        data.total = data.objectIDs.length
+        setHasNoResults(false)
+        setData(data)
+      }
     })
     .catch((err) => {
       setError(err)
@@ -220,15 +241,28 @@ function ArtAPI() {
       <div className="search-form">
         <div>
           <SearchComponent
+            searchVal={searchVal}
             onHandleSearchChange={handleSearchChange}
             />
         </div>
         <div>
-          <Button size="massive" onClick={onSubmitSearch}>
+          <Button disabled={loading} size="massive" onClick={onSubmitSearch}>
             Submit
           </Button>
         </div>
       </div>
+      {hasNoResults && (
+        <div className="art-no-results">
+          <div>
+            No Results Were Found
+          </div>
+          <div>
+            <button className="project-btn" onClick={clearSearchResults}>
+              Clear Search
+            </button>
+          </div>
+        </div>
+      )}
       {data && (
         <div className="art-grid">
           {data.objectIDs.map((item, idx) => (

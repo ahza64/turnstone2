@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from 'react'
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useLocation } from "react-router-dom"
 import Hamburger from "hamburger-react"
 import { AppContext } from "../../context"
 import useThemeControl from "../../hooks/useThemeControl"
@@ -26,13 +26,14 @@ function TurnStone() {
 
 function NavbarLinksDesktop(props) {
   const [context] = useContext(AppContext)
+  const location = useLocation()
   const themeMode = context.theme.charAt(0).toUpperCase() + context.theme.slice(1)
 
   const navigate = useNavigate()
   const navigateRoute = route => {
     navigate(route)
   }
-
+  
   return (
     <div className="navbar-links-wrapper">
       <div className="navbar-icon">
@@ -43,19 +44,31 @@ function NavbarLinksDesktop(props) {
       </div>
       <div className="nav-links-wrapper">
         <div className="navlink">
-            <Button onClick={() => navigateRoute('/')}>
+            <button
+              className="project-btn"
+              onClick={() => navigateRoute('/')}
+              active={location.pathname === '/' ? "true" : "false"}
+            >
               Home
-            </Button>
+            </button>
         </div>
         <div className="navlink">
-            <Button onClick={() => navigateRoute('/resume')}>
+            <button
+              className="project-btn"
+              onClick={() => navigateRoute('/resume')}
+              active={location.pathname === '/resume' ? "true" : "false"}
+            >
               Resume
-            </Button>
+            </button>
         </div>
         <div className="navlink">
-            <Button onClick={() => navigateRoute('/projects')}>
+            <button
+              className="project-btn"
+              onClick={() => navigateRoute('/projects')}
+              active={location.pathname === '/projects' ? "true" : "false"}
+            >
               Projects
-            </Button>
+            </button>
         </div>
       </div>
     </div>

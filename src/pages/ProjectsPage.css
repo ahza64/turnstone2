@@ -112,3 +112,10 @@
 .modal-text {
   padding: 16px;
 }
+
+.art-no-results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 18px;
+}
