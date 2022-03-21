@@ -25,3 +25,11 @@
 .email {
   text-align: center;
 }
+
+.email-nav-btn.light {
+  color: lightgrey;
+}
+
+.email-nav-btn.light:hover {
+  color: black;
+}

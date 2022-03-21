@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom"
 import Hamburger from "hamburger-react"
 import { AppContext } from "../../context"
 import useThemeControl from "../../hooks/useThemeControl"
-import { Button, Checkbox, Container } from "semantic-ui-react"
+import { Checkbox, Container } from "semantic-ui-react"
 
 import stoneImg from "./stone2.png"
 import "./Navbar.css"
@@ -33,7 +33,7 @@ function NavbarLinksDesktop(props) {
   const navigateRoute = route => {
     navigate(route)
   }
-  
+
   return (
     <div className="navbar-links-wrapper">
       <div className="navbar-icon">
@@ -45,7 +45,7 @@ function NavbarLinksDesktop(props) {
       <div className="nav-links-wrapper">
         <div className="navlink">
             <button
-              className="project-btn"
+              className={`project-btn ${context.theme}`}
               onClick={() => navigateRoute('/')}
               active={location.pathname === '/' ? "true" : "false"}
             >
@@ -54,7 +54,7 @@ function NavbarLinksDesktop(props) {
         </div>
         <div className="navlink">
             <button
-              className="project-btn"
+              className={`project-btn ${context.theme}`}
               onClick={() => navigateRoute('/resume')}
               active={location.pathname === '/resume' ? "true" : "false"}
             >
@@ -63,7 +63,7 @@ function NavbarLinksDesktop(props) {
         </div>
         <div className="navlink">
             <button
-              className="project-btn"
+              className={`project-btn ${context.theme}`}
               onClick={() => navigateRoute('/projects')}
               active={location.pathname === '/projects' ? "true" : "false"}
             >

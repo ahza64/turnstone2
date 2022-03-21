@@ -1,5 +1,6 @@
-import { useState } from "react"
-import { Modal, Button, Header, Icon } from "semantic-ui-react"
+import { useState, useContext } from "react"
+import { AppContext } from "../../context"
+import { Modal, Header, Icon } from "semantic-ui-react"
 import { useNavigate } from "react-router-dom"
 
 import "./EmailPortal.css"
@@ -14,6 +15,7 @@ function CheckBox(props) {
 }
 
 function EmailModal(props) {
+  const [context] = useContext(AppContext)
   const [open, setOpen] = useState(false)
   const navigate = useNavigate()
   const navigateRoute = route => {
@@ -28,7 +30,7 @@ function EmailModal(props) {
       onOpen={() => setOpen(true)}
       open={open}
       size='small'
-      trigger={<Button basic color="grey" disabled={!props.isChecked}>Email</Button>}
+      trigger={<button className={`project-btn ${context.theme}`} disabled={!props.isChecked}>My Email Address</button>}
     >
       <Header icon>
         <Icon name='archive' />
@@ -40,15 +42,15 @@ function EmailModal(props) {
         </h1>
       </Modal.Content>
       <Modal.Actions>
-        <Button color='grey' inverted onClick={() => navigateRoute('/')}>
+        <button className={`email-nav-btn project-btn ${context.theme}`} onClick={() => navigateRoute('/')}>
           Home
-        </Button>
-        <Button color='grey' inverted onClick={() => navigateRoute('/resume')}>
+        </button>
+        <button className={`email-nav-btn project-btn ${context.theme}`} onClick={() => navigateRoute('/resume')}>
           Resume
-        </Button>
-        <Button color='grey' inverted onClick={() => navigateRoute('/projects')}>
+        </button>
+        <button className={`email-nav-btn project-btn ${context.theme}`} onClick={() => navigateRoute('/projects')}>
           Projects
-        </Button>
+        </button>
       </Modal.Actions>
     </Modal>
   )

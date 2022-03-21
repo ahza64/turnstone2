@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
+import { AppContext } from "../context"
 import { Input, Button, Modal, Image } from "semantic-ui-react"
 import { MdOutlineConstruction } from "react-icons/md"
 import reactor from "./reactor.png"
@@ -59,7 +60,7 @@ function ProjectPageContent(props) {
 function SearchComponent(props) {
   return (
     <Input
-      placeholder='Search...'
+      placeholder='Search for Art'
       onChange={props.onHandleSearchChange}
       size="massive"
       value={props.searchVal}
@@ -182,6 +183,7 @@ function ArtModal(props) {
 }
 
 function ArtAPI() {
+  const [context] = useContext(AppContext)
   const [data, setData] = useState(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(false)
@@ -257,7 +259,7 @@ function ArtAPI() {
             No Results Were Found
           </div>
           <div>
-            <button className="project-btn" onClick={clearSearchResults}>
+            <button className={`project-btn ${context.theme}`} onClick={clearSearchResults}>
               Clear Search
             </button>
           </div>
@@ -310,6 +312,7 @@ const intialState = {
 
 export default function ProjectsPage() {
   const [state, setState] = useState({...intialState})
+  const [context] = useContext(AppContext)
   const toggleProject = (name) => {
 
     const [selected] = state.projectsData.filter(project => project.name === name)
@@ -324,7 +327,7 @@ export default function ProjectsPage() {
     <div className="projects-page-wrapper">
       <div className="project-navigation">
         {projectsData.map((project) => (
-          <button className="project-btn" active={state.selected.name === project.name ? "true" : "false"} key={project.id} onClick={() => toggleProject(project.name)}>
+          <button className={`project-btn ${context.theme}`} active={state.selected.name === project.name ? "true" : "false"} key={project.id} onClick={() => toggleProject(project.name)}>
             {project.name}
           </button>
         ))}

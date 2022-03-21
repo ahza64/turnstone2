@@ -38,23 +38,34 @@
 
 .project-btn {
   border: 2px solid lightgrey;
-  background-color: white;
+  background-color: transparent;
   border-radius: 4px;
   cursor: pointer;
   margin: 16px;
   padding: 8px;
 }
 
+.project-btn.dark {
+  color: white;
+}
+
 .project-btn:hover {
   background-color: lightgrey;
+  color: black;
+}
+
+.project-btn:hover:disabled {
+  background-color: transparent;
+  cursor: default;
+}
+
+.project-btn:disabled {
+  color: transparent;
 }
 
 .project-btn[active="true"] {
   background-color: lightgrey;
-}
-
-.project-btn.dark {
-  color: white;
+  color: black;
 }
 
 .under-construction {
