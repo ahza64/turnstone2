@@ -292,9 +292,8 @@ function DataViz() {
     <ProjectPageContent
       title="Data Viz"
       image={yellowGraph}
-      description="This is a mostly backend (fullstack) application I’ve built. This version uses React.js OOP, Charts.js, node.js, express.js, mongoose, mongoDB and mongoLabs, using the wargaming API. Sadly due to a microsoft buyout and mongodb/mongolabs migration, this application is under construction. The link will take you to the github repository where you can see the micro servers I built using mongo’s parser pipeline. The new application is being built on React Hooks."
-      href="https://github.com/ahza64/wows-passel"
-      isLive={true}
+      description="This is a mostly backend (fullstack) application I’ve built. This version uses React.js Hooks, Charts.js, and the wargaming API. Sadly due to a microsoft buyout and mongodb/mongolabs migration, this application is being rebuilt back to its glory days, but now with hooks instead of OOP. The original app used: node.js, express.js, mongoose, mongoDB."
+      href="https://dazzling-chaja-e6191e.netlify.app/"
     />
   )
 }
