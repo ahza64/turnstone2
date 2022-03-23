@@ -93,6 +93,11 @@
 
 .tron-linkedin-control {
   animation: rotate 3s ease forwards;
+  animation-fill-mode: none;
+}
+
+.tron-linkedin-control:hover {
+  transform: translateY(-10px);
 }
 
 @keyframes rotate {
@@ -122,6 +127,12 @@
 
 .tron-github-control {
   animation: rotateGit 3s ease forwards;
+  animation-fill-mode: none;
+}
+
+.tron-github-control:hover {
+  transform: translateY(-10px);
+  color: "blue";
 }
 
 @keyframes rotateGit {

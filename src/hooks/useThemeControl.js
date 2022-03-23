@@ -10,6 +10,9 @@ export default function useThemeControl() {
       ...prevState,
       theme: map[state.theme]
     }))
+    if (window.localStorage) {
+      window.localStorage.setItem("stoneTheme", map[state.theme])
+    }
   }
 
   return {

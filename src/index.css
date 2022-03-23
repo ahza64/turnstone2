@@ -34,8 +34,12 @@ code {
 body.dark {
   background-color: black;
   color: white;
+  transition: background-color 200ms ease-in 50ms;
+  transition: color 200ms ease-in 50ms;
 }
 
 body.light {
   color: black;
+  transition: background-color 200ms ease-in 50ms;
+  transition: color 200ms ease-in 50ms;
 }

@@ -2,8 +2,19 @@ import { createContext, useState, useEffect } from "react"
 
 const AppContext = createContext([{}, () => {}])
 
+function getThemeFromLocalStorage() {
+  if (window.localStorage) {
+    const theme = window.localStorage.getItem("stoneTheme")
+    return theme ? theme : "dark"
+  }
+}
+
+const initialState = {
+  theme: getThemeFromLocalStorage()
+}
+
 export default function AppProvider(props) {
-  const [state, setState] = useState({theme: "light"})
+  const [state, setState] = useState({ ...initialState })
   useEffect(() => {
     const currentTheme = state.theme
     if (state.theme === "dark") {
@@ -15,6 +26,7 @@ export default function AppProvider(props) {
       document.body.classList.add("light")
     }
   }, [state.theme])
+
   return (
     <AppContext.Provider value={[state, setState]}>
       {props.children}
