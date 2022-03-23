@@ -15,9 +15,12 @@ export default function Tronitron() {
   return (
     <div className="tronitron-wrapper">
       <div className="avatar-grid">
-        <div className="avatar-text">
+        <div className="avatar-text-wrapper">
           <div>
-            <h1>Justin Pettit</h1>
+            <h1>TurnStone</h1>
+          </div>
+          <div>
+            <h2>"Leave no stone unturned"</h2>
           </div>
           <div>
             <h3>Software Engineer and Full Stack Web Developer</h3>

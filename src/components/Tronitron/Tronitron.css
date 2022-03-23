@@ -1,3 +1,12 @@
+@font-face {
+    font-family: 'cyberway_ridersregular';
+    src: url('/src/components/Tronitron/cyberwayriders-lg97d-webfont.woff2') format('woff2'),
+         url('/src/components/Tronitron/cyberwayriders-lg97d-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 .tronitron-wrapper {
   display: flex;
   flex-direction: column;
@@ -28,10 +37,20 @@
   justify-content: space-around;
 }
 
-.avatar-text {
+.avatar-text-wrapper {
   display: flex;
   flex-direction: column;
   text-align: center;
+}
+
+.avatar-text-wrapper h1 {
+  font-family: 'cyberway_ridersregular', Arial, sans-serif;
+  font-size: 82px;
+}
+
+.avatar-text-wrapper h2 {
+  font-family: 'cyberway_ridersregular', Arial, sans-serif;
+  font-size: 32px;
 }
 
 .avatar-social {
