@@ -187,7 +187,7 @@ function ArtAPI() {
   const [data, setData] = useState(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(false)
-  const [searchVal, setSearchVal] = useState("")
+  const [searchVal, setSearchVal] = useState("flowers")
   const [hasNoResults, setHasNoResults] = useState(null)
 
   const clearSearchResults = () => {
@@ -201,6 +201,13 @@ function ArtAPI() {
 
   const onSubmitSearch = () => {
     fetchSetData(searchVal)
+  }
+
+  const handleSearchKeyPress = (event) => {
+    if(event.key === 'Enter'){
+      console.log('enter press here! ')
+      fetchSetData(searchVal)
+    }
   }
 
   const fetchSetData = (query) => {
@@ -241,7 +248,7 @@ function ArtAPI() {
         description="This component bakedin Application (“feature”) is built into this portfolio website. Mostly showcasing fetch useEffect with a bunch of useState and data handling and multiple React.js functionality structures, I used the boston met museum’s API to request up to 20 data selections from a search query, to fill a list of art piece show cards with name and date with a button to open a modal displaying an image and maker and donator."
       />
       <div className="search-form">
-        <div>
+        <div  onKeyPress={handleSearchKeyPress}>
           <SearchComponent
             searchVal={searchVal}
             onHandleSearchChange={handleSearchChange}
@@ -267,9 +274,7 @@ function ArtAPI() {
       )}
       {loading && (
         <div className="art-no-results">
-
-            Fetching data from the Art API...
-
+          Fetching data from the Art API...
         </div>
       )}
       {data && (
