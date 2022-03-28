@@ -265,6 +265,13 @@ function ArtAPI() {
           </div>
         </div>
       )}
+      {loading && (
+        <div className="art-no-results">
+
+            Fetching data from the Art API...
+
+        </div>
+      )}
       {data && (
         <div className="art-grid">
           {data.objectIDs.map((item, idx) => (
