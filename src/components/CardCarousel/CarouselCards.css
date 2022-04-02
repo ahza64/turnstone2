@@ -55,10 +55,9 @@
 }
 
 .card-wrapper.dark {
-  border: 1px solid blue;
-
+  box-shadow: 2px 2px blue, -2px -2px .4em blue;
 }
 
 .card-wrapper.light {
-  border: 1px solid #cacaca;
+  box-shadow: 2px 2px #cacaca, -2px 0 .4em #cacaca;
 }

@@ -205,7 +205,6 @@ function ArtAPI() {
 
   const handleSearchKeyPress = (event) => {
     if(event.key === 'Enter'){
-      console.log('enter press here! ')
       fetchSetData(searchVal)
     }
   }
