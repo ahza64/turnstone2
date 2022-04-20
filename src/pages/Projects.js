@@ -5,6 +5,7 @@ import { MdOutlineConstruction } from "react-icons/md"
 import reactor from "./reactor.png"
 import lion from "./lion.png"
 import yellowGraph from "../images/dataviz/yellowGraph.png"
+import meetups from "../images/meetups/meetups.png"
 
 import projectsData from "./projectsData.js"
 import "./ProjectsPage.css"
@@ -246,6 +247,7 @@ function ArtAPI() {
         image="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=445&q=80"
         description="This component bakedin Application (“feature”) is built into this portfolio website. Mostly showcasing fetch useEffect with a bunch of useState and data handling and multiple React.js functionality structures, I used the boston met museum’s API to request up to 20 data selections from a search query, to fill a list of art piece show cards with name and date with a button to open a modal displaying an image and maker and donator."
       />
+      <img src="" alt=""/>
       <div className="search-form">
         <div  onKeyPress={handleSearchKeyPress}>
           <SearchComponent
@@ -287,10 +289,21 @@ function ArtAPI() {
   )
 }
 
+function Meetups() {
+  return (
+    <ProjectPageContent
+      title="Meetup App"
+      image={meetups}
+      description="Meetups uses firebase to hold the meetup, and React Hooks to build and control the website. Add a new meetup, see all the saved meetups, select favorite meetups for that visit, and see all favorites for that visit."
+      href="https://jade-travesseiro-5ea9a9.netlify.app/"
+    />
+  )
+}
+
 function Reactor() {
   return (
     <ProjectPageContent
-      title="Reactor App (hooks only)"
+      title="Reactor App"
       image="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
       description="Using custom react hooks and pubsub, post blogs and give emoji reactions all tagged with your username, showcasing the reducer pattern, replacing the need for the Redux library. There is no backend store, but you can ping multiple user names and interact and see the frontend Reducer storage pattern in action."
       href="https://vibrant-darwin-54679b.netlify.app/"
@@ -311,6 +324,7 @@ function DataViz() {
 
 const projectsMap = {
   'ART-API': <ArtAPI />,
+  'MEETUPS': <Meetups />,
   'REACTOR': <Reactor />,
   'DATA-VIZ': <DataViz />
 }
