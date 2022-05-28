@@ -57,6 +57,18 @@ function ProjectPageContent(props) {
   )
 }
 
+function TDDSundaes() {
+  return (
+    <ProjectPageContent
+      title="TDD Sundaes"
+      image={yellowGraph}
+      description={`Sundaes is a purely Test Driven Developed site. There is no backend storage for orders, but the scoop and topping options data is being fetched to showcase async testing. You can clone the repo here https://github.com/ahza64/jest-sundae and run the tests locally, or just simply play with the app and read the tests. Tests include mock servers and error handlers. This is deployed on Heroku, so may need up to 10sec to boot up.`}
+      href="https://jest-sundae.herokuapp.com/"
+    />
+  )
+}
+
+
 function Meetups() {
   return (
     <ProjectPageContent
@@ -92,6 +104,7 @@ function DataViz() {
 
 const projectsMap = {
   'ART-API': <ArtAPI />,
+  'TDD-SUNDAES': <TDDSundaes />,
   'MEETUPS': <Meetups />,
   'REACTOR': <Reactor />,
   'DATA-VIZ': <DataViz />
@@ -106,7 +119,6 @@ export default function ProjectsPage() {
   const [state, setState] = useState({...intialState})
   const [context] = useContext(AppContext)
   const toggleProject = (name) => {
-
     const [selected] = state.projectsData.filter(project => project.name === name)
 
     setState((prevState) => ({

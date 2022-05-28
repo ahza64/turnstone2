@@ -3,10 +3,6 @@ import { AppContext } from "../../../context"
 import { ArtCardItem } from "./ArtCardItem"
 import { Input, Button } from "semantic-ui-react"
 
-// import projectsData from "./projectsData.js"
-// import "./ProjectsPage.css"
-
-
 function SearchComponent(props) {
   return (
     <Input
