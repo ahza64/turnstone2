@@ -115,7 +115,7 @@ function DataViz() {
 
 const projectsMap = {
   'ART-API': <ArtAPI />,
-  'Robots': <Robots />,
+  'ROBOTS': <Robots />,
   'TDD-SUNDAES': <TDDSundaes />,
   'MEETUPS': <Meetups />,
   'REACTOR': <Reactor />,
