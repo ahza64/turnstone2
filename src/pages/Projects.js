@@ -57,6 +57,17 @@ function ProjectPageContent(props) {
   )
 }
 
+function Robots() {
+  return (
+    <ProjectPageContent
+      title="Robots"
+      image={yellowGraph}
+      description={`Just a fun app under construction about controlling robots. Built in React, currently simply move robots from on department to another. Expanding into robot types and styling next`}
+      href="https://helpful-elf-58078b.netlify.app/"
+    />
+  )
+}
+
 function TDDSundaes() {
   return (
     <ProjectPageContent
@@ -104,6 +115,7 @@ function DataViz() {
 
 const projectsMap = {
   'ART-API': <ArtAPI />,
+  'Robots': <Robots />,
   'TDD-SUNDAES': <TDDSundaes />,
   'MEETUPS': <Meetups />,
   'REACTOR': <Reactor />,
