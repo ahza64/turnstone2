@@ -98,7 +98,7 @@
 
 .tron-linkedin-control:hover {
   transition: all 0.3s;
-  transform: translateY(-10px);
+  transform: translateY(-5px);
 }
 
 @keyframes rotate {
