@@ -42,28 +42,30 @@ function CarouselCard({ item }) {
   return (
     <div className={`card-wrapper ${context.theme}`}>
       <div>
-       {item.title}
-     </div>
-     <div className="card-icon-title">
-      <div>
-        {state.selected.icon}
-      </div>
-      <div>
-        {state.selected.title}
-      </div>
-     </div>
-     <div>
-      {state.selected.description}
-     </div>
-        <div className="dot-wrapper">
-          {state.list.map((item) => (
-            <CardDot
-              key={item.id}
-              item={item}
-              selectedId={state.selected.id}
-              onHandleChange={handleChange}/>
-          ))}
+        <div>
+          {item.title}
         </div>
+        <div className="card-icon-title">
+          <div>
+            {state.selected.icon}
+          </div>
+          <div>
+            {state.selected.title}
+          </div>
+        </div>
+        <div>
+          {state.selected.description}
+        </div>
+      </div>
+      <div className="dot-wrapper">
+        {state.list.map((item) => (
+          <CardDot
+            key={item.id}
+            item={item}
+            selectedId={state.selected.id}
+            onHandleChange={handleChange}/>
+        ))}
+      </div>
     </div>
   )
 }

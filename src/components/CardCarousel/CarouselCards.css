@@ -13,9 +13,12 @@
 }
 
 .card-wrapper {
-
+  min-height: 200px;
   border-radius: 4px;
   padding: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .card-icon-title {
