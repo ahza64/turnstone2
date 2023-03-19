@@ -97,6 +97,7 @@
 }
 
 .tron-linkedin-control:hover {
+  transition: all 0.3s;
   transform: translateY(-10px);
 }
 
@@ -131,8 +132,8 @@
 }
 
 .tron-github-control:hover {
-  transform: translateY(-10px);
-  color: "blue";
+  transition: all 0.3s;
+  transform: translateY(-5px);
 }
 
 @keyframes rotateGit {

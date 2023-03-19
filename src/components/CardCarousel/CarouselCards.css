@@ -33,7 +33,7 @@
 }
 
 .card-dot-selected {
-  background-color: #0e6efb;
+  background-color: #0000cc;
   border-radius: 50%;
   margin: 0 8px;
   min-width: 12px;
@@ -55,9 +55,9 @@
 }
 
 .card-wrapper.dark {
-  box-shadow: 2px 2px blue, -2px -2px .4em blue;
+  box-shadow: inset 0 0 0 3px #000080;
 }
 
 .card-wrapper.light {
-  box-shadow: 2px 2px #cacaca, -2px 0 .4em #cacaca;
+  box-shadow: inset 0 0 0 3px #cacaca;
 }

@@ -13,7 +13,7 @@ export default function ResumePage() {
         </h4>
       </div>
       <div>
-        <a href="https://github.com/ahza64/turnstone2/raw/master/Hooks%20CV4.docx">
+        <a className="download-resume" href="https://github.com/ahza64/turnstone2/raw/master/Hooks%20CV4.docx">
           Download Resume
         </a>
       </div>
