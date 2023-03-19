@@ -28,7 +28,7 @@ export default function Footer() {
         all rights reserved
       </div>
       <div>
-        2022
+        2023
       </div>
     </nav>
   )

@@ -9,3 +9,11 @@
   font-size: 12px;
   text-transform: capitalize;
 }
+
+.ui.toggle.checkbox input:checked~label:before {
+  background-color: #0000cc !important;
+}
+
+.ui.toggle.checkbox input:focus:checked~label:before {
+  background-color: #0000cc !important;
+}
