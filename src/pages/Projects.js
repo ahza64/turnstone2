@@ -74,7 +74,7 @@ function TDDSundaes() {
       title="TDD Sundaes"
       image={yellowGraph}
       description={`Sundaes is a purely Test Driven Developed site. There is no backend storage for orders, but the scoop and topping options data is being fetched to showcase async testing. You can clone the repo here https://github.com/ahza64/jest-sundae and run the tests locally, or just simply play with the app and read the tests. Tests include mock servers and error handlers. This is deployed on Heroku, so may need up to 10sec to boot up.`}
-      href="https://jest-sundae.herokuapp.com/"
+      href="https://precious-kitten-cf9a7b.netlify.app"
     />
   )
 }

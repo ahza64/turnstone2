@@ -6,6 +6,7 @@ import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import { SiGithub, SiLinkedin } from "react-icons/si"
 import Model from './3dselfmodel'
+import epictetus from './epictetus.png'
 
 import tronitronData from "./tronitronData"
 import './Tronitron.css'
@@ -58,6 +59,7 @@ export default function Tronitron() {
         </div>
       </div>
       <Container>
+        <img src={epictetus} alt="epictetus" />
         <div className="introduction">
             <p>{tronitronData.introduction}</p>
         </div>
