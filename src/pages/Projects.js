@@ -61,7 +61,7 @@ function Robots() {
   return (
     <ProjectPageContent
       title="Robots"
-      image={yellowGraph}
+      image="https://images.unsplash.com/photo-1563396983906-b3795482a59a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1472&q=80"
       description={`Just a fun app under construction about controlling robots. Built in React, currently simply move robots from on department to another. Expanding into robot types and styling next`}
       href="https://helpful-elf-58078b.netlify.app/"
     />
@@ -72,7 +72,7 @@ function TDDSundaes() {
   return (
     <ProjectPageContent
       title="TDD Sundaes"
-      image={yellowGraph}
+      image="https://plus.unsplash.com/premium_photo-1661427159078-9d85039e99b8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80"
       description={`Sundaes is a purely Test Driven Developed site. There is no backend storage for orders, but the scoop and topping options data is being fetched to showcase async testing. You can clone the repo here https://github.com/ahza64/jest-sundae and run the tests locally, or just simply play with the app and read the tests. Tests include mock servers and error handlers. This is deployed on Heroku, so may need up to 10sec to boot up.`}
       href="https://precious-kitten-cf9a7b.netlify.app"
     />
