@@ -64,7 +64,7 @@
 }
 
 .project-btn[active="true"] {
-  background-color: lightgrey;
+  background-color: #868e96;
   color: black;
 }
 
@@ -95,7 +95,7 @@
 }
 
 .art-card {
-  box-shadow: 2px 2px #cacaca, -2px 0 .4em #cacaca;
+  box-shadow: 0 0 0 2px #cacaca;
   border-radius: 4px;
   display: flex;
   flex-direction: column;
@@ -104,6 +104,7 @@
 }
 
 .art-grid {
+  padding: 50px;
   display: grid;
   grid-template-columns: repeat(2, auto);
   column-gap: 16px;

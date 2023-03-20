@@ -56,7 +56,7 @@ export function ArtAPI() {
       if (data.total === 0) {
         setHasNoResults(true)
       } else {
-        const data1 = data.objectIDs.slice(0, 20)
+        const data1 = data.objectIDs.slice(0, 10)
         data.objectIDs = data1
         data.total = data.objectIDs.length
         setHasNoResults(false)

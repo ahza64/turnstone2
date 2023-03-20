@@ -24,6 +24,15 @@
 .card-icon-title {
   display: flex;
   font-size: 18px;
+  margin-top: 5px;
+}
+
+.card-text {
+  padding: 5px;
+}
+
+.card-icon {
+  margin-right: 5px;
 }
 
 .card-dot {

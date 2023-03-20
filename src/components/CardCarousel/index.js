@@ -41,12 +41,12 @@ function CarouselCard({ item }) {
 
   return (
     <div className={`card-wrapper ${context.theme}`}>
-      <div>
+      <div className="card-text">
         <div>
           {item.title}
         </div>
         <div className="card-icon-title">
-          <div>
+          <div className='card-icon'>
             {state.selected.icon}
           </div>
           <div>
