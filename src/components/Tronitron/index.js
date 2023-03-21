@@ -58,8 +58,16 @@ export default function Tronitron() {
           </Canvas>
         </div>
       </div>
-      <Container>
+      <div className="epictetus-wrapper">
         <img src={epictetus} alt="epictetus" />
+        <h3>
+          "You cannot learn, what you think you already know"
+        </h3>
+        <h2>
+          -Epictetus
+        </h2>
+      </div>
+      <Container>
         <div className="introduction">
             <p>{tronitronData.introduction}</p>
         </div>

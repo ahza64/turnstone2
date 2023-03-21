@@ -46,11 +46,13 @@
 .avatar-text-wrapper h1 {
   font-family: 'cyberway_ridersregular', Arial, sans-serif;
   font-size: 82px;
+  letter-spacing: 5px;
 }
 
 .avatar-text-wrapper h2 {
   font-family: 'cyberway_ridersregular', Arial, sans-serif;
   font-size: 32px;
+  letter-spacing: 3px;
 }
 
 .avatar-social {
@@ -147,4 +149,14 @@
 
 .tron-github:hover {
   color: black;
+}
+
+.epictetus-wrapper {
+  display: flex;
+}
+
+.epictetus-wrapper h2 {
+  font-family: 'cyberway_ridersregular', Arial, sans-serif;
+  font-size: 32px;
+  letter-spacing: 5px;
 }
