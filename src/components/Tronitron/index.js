@@ -60,12 +60,14 @@ export default function Tronitron() {
       </div>
       <div className="epictetus-wrapper">
         <img src={epictetus} alt="epictetus" />
-        <h3>
-          "You cannot learn, what you think you already know"
-        </h3>
-        <h2>
-          -Epictetus
-        </h2>
+        <div>
+          <h3>
+            "You cannot learn, what you think you already know"
+          </h3>
+          <h2>
+            -Epictetus
+          </h2>
+        </div>
       </div>
       <Container>
         <div className="introduction">
