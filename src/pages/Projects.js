@@ -5,6 +5,7 @@ import reactor from "./reactor.png"
 import lion from "./lion.png"
 import yellowGraph from "../images/dataviz/yellowGraph.png"
 import meetups from "../images/meetups/meetups.png"
+import warmUI from "./warmUI.png"
 
 import projectsData from "./projectsData.js"
 import "./ProjectsPage.css"
@@ -117,8 +118,8 @@ function WarmUI() {
   return (
     <ProjectPageContent
       title="Warm UI"
-      image={yellowGraph}
-      description="This is a mostly backend (fullstack) application I’ve built. This version uses React.js Hooks, Charts.js, and the wargaming API. Sadly due to a microsoft buyout and mongodb/mongolabs migration, this application is being rebuilt back to its glory days, but now with hooks instead of OOP. The original app used: node.js, express.js, mongoose, mongoDB."
+      image={warmUI}
+      description="This is an extensive layout I've done with warm and feminine UI/styling"
       href="https://exquisite-ganache-3facd1.netlify.app/"
     />
   )
