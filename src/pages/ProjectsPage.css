@@ -121,6 +121,10 @@
   display: flex;
 }
 
+.modal-art-grid.dark {
+  background-color: black;
+}
+
 .modal-text {
   padding: 16px;
 }

@@ -1,7 +1,10 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
+import { AppContext } from "../../../context"
 import { Button, Modal, Image } from "semantic-ui-react"
 
 export function ArtModal(props) {
+  const [context] = useContext(AppContext)
+
   const [open, setOpen] = useState(false)
 
   return (
@@ -10,12 +13,13 @@ export function ArtModal(props) {
       onOpen={() => setOpen(true)}
       open={open}
       trigger={<Button fluid size="mini">More...</Button>}
+      className={context.theme}
     >
       <Modal.Header>
         {props.data.title}
       </Modal.Header>
       <Modal.Content>
-        <div className="modal-art-grid">
+        <div className={`modal-art-grid ${context.theme}`}>
           <div>
             {props.data.primaryImage ? (
               <Image size="medium" src={props.data.primaryImage}/>
