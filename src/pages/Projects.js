@@ -113,8 +113,20 @@ function DataViz() {
   )
 }
 
+function WarmUI() {
+  return (
+    <ProjectPageContent
+      title="Warm UI"
+      image={yellowGraph}
+      description="This is a mostly backend (fullstack) application I’ve built. This version uses React.js Hooks, Charts.js, and the wargaming API. Sadly due to a microsoft buyout and mongodb/mongolabs migration, this application is being rebuilt back to its glory days, but now with hooks instead of OOP. The original app used: node.js, express.js, mongoose, mongoDB."
+      href="https://exquisite-ganache-3facd1.netlify.app/"
+    />
+  )
+}
+
 const projectsMap = {
   'ART-API': <ArtAPI />,
+  'WARM-UI': <WarmUI />,
   'ROBOTS': <Robots />,
   'TDD-SUNDAES': <TDDSundaes />,
   'MEETUPS': <Meetups />,
