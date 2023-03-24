@@ -154,14 +154,18 @@ export default function ProjectsPage() {
 
   return (
     <div className="projects-page-wrapper">
+      <div className="projects-navigation-title">Project views</div>
       <div className="project-navigation">
         {projectsData.map((project) => (
-          <button className={`project-btn ${context.theme}`} active={state.selected.name === project.name ? "true" : "false"} key={project.id} onClick={() => toggleProject(project.name)}>
+          <button 
+            className={`project-btn ${context.theme}`} 
+            active={state.selected.name === project.name ? "true" : "false"} 
+            key={project.id} onClick={() => toggleProject(project.name)}
+          >
             {project.name}
           </button>
         ))}
       </div>
-      <div><small>(unlike the navbar, these are view seletor buttons not powered with react-router)</small></div>
       <div>
         {projectsMap[state.selected.name]}
       </div>

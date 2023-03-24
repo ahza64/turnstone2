@@ -11,8 +11,19 @@
 
 .project-navigation {
   padding: 8px;
-  display: flex;
+  display: block;
   justify-content: center;
+  text-align: center;
+}
+
+.projects-navigation-title {
+  font-size: 24px;
+  text-decoration: underline;
+  margin-top: 24px;
+}
+
+.project-navigation button {
+  width: 130px;
 }
 
 .project-content {
@@ -114,6 +125,11 @@
 @media (max-width: 750px) {
   .art-grid {
     grid-template-columns: repeat(1, auto);
+  }
+
+  .project-navigation {
+    display: block;
+    margin: auto;
   }
 }
 
