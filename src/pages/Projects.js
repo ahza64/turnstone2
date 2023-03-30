@@ -6,6 +6,7 @@ import lion from "./lion.png"
 import yellowGraph from "../images/dataviz/yellowGraph.png"
 import meetups from "../images/meetups/meetups.png"
 import warmUI from "./warmUI.png"
+import poster from "./poster.png"
 
 import projectsData from "./projectsData.js"
 import "./ProjectsPage.css"
@@ -125,6 +126,17 @@ function WarmUI() {
   )
 }
 
+function Poster() {
+  return (
+    <ProjectPageContent
+      title="Poster"
+      image={poster}
+      description="Post some messages using React with nested routes and loader with a dummy backend in node."
+      href="https://monumental-smakager-e6e9b2.netlify.app/"
+    />
+  )
+}
+
 const projectsMap = {
   'ART-API': <ArtAPI />,
   'WARM-UI': <WarmUI />,
@@ -132,7 +144,8 @@ const projectsMap = {
   'TDD-SUNDAES': <TDDSundaes />,
   'MEETUPS': <Meetups />,
   'REACTOR': <Reactor />,
-  'DATA-VIZ': <DataViz />
+  'DATA-VIZ': <DataViz />,
+  'POSTER': <Poster />
 }
 
 const intialState = {
