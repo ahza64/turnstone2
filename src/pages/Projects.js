@@ -88,7 +88,7 @@ function Meetups() {
       title="Meetup App"
       image={meetups}
       description="Meetups uses firebase to hold the meetup, and React Hooks to build and control the website. Add a new meetup, see all the saved meetups, select favorite meetups for that visit, and see all favorites for that visit."
-      href="https://jade-travesseiro-5ea9a9.netlify.app/"
+      href="https://646034b5f1d26428f9c5abde--bright-travesseiro-6fd445.netlify.app/"
     />
   )
 }
