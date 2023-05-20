@@ -71,6 +71,7 @@ export default function Tronitron() {
       </div>
       <Container>
         <div className="introduction">
+            <h3>Introduction</h3>
             <p>{tronitronData.introduction}</p>
         </div>
       </Container>
