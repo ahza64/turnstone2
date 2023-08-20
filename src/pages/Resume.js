@@ -1,10 +1,12 @@
+import epictetus from './resume.png'
 import { MdOutlineConstruction } from "react-icons/md"
 import "./ResumePage.css"
 
 export default function ResumePage() {
   return (
     <div className="resume-page-wrapper">
-      <div>
+      <img src={epictetus} alt="epictetus" className="image"/>
+      {/*<div>
         <MdOutlineConstruction className="icon-large"/>
       </div>
       <div>
@@ -16,7 +18,7 @@ export default function ResumePage() {
         <a className="download-resume" href="https://github.com/ahza64/turnstone2/raw/master/Hooks%20CV4.docx">
           Download Resume
         </a>
-      </div>
+      </div>*/}
     </div>
   )
 }

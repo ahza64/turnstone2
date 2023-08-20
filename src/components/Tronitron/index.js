@@ -69,12 +69,12 @@ export default function Tronitron() {
           </h2>
         </div>
       </div>
-      <Container>
+      {/*<Container>
         <div className="introduction">
             <h3>Introduction</h3>
             <p>{tronitronData.introduction}</p>
         </div>
-      </Container>
+          </Container>}*/}
     </div>
   )
 }
