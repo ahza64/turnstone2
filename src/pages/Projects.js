@@ -59,6 +59,17 @@ function ProjectPageContent(props) {
   )
 }
 
+function CalorieTracker() {
+  return (
+    <ProjectPageContent
+      title="Calorie Tracker"
+      image="https://images.unsplash.com/photo-1563396983906-b3795482a59a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1472&q=80"
+      description={`Track your calories consumed and burned using this frontend project.`}
+      href="https://venerable-kleicha-5b4b33.netlify.app/"
+    />
+  )
+}
+
 function Robots() {
   return (
     <ProjectPageContent
@@ -140,6 +151,7 @@ function Poster() {
 const projectsMap = {
   'ART-API': <ArtAPI />,
   'WARM-UI': <WarmUI />,
+  'CALORIE-TRACKER': <CalorieTracker />,
   'ROBOTS': <Robots />,
   'TDD-SUNDAES': <TDDSundaes />,
   'MEETUPS': <Meetups />,
