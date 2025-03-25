@@ -59,6 +59,17 @@ function ProjectPageContent(props) {
   )
 }
 
+function MovieReviews() {
+  return (
+    <ProjectPageContent
+      title="Movie Reviews"
+      image="https://images.unsplash.com/photo-1563396983906-b3795482a59a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1472&q=80"
+      description={`Look up popular movie and TV show reviews on this stylish movie and show app.`}
+      href="https://mellifluous-caramel-bd7133.netlify.app/"
+    />
+  )
+}
+
 function CalorieTracker() {
   return (
     <ProjectPageContent
@@ -152,6 +163,7 @@ const projectsMap = {
   'ART-API': <ArtAPI />,
   'WARM-UI': <WarmUI />,
   'CALORIE-TRACKER': <CalorieTracker />,
+  'MOVIE-REVIEWS': <MovieReviews />,
   'ROBOTS': <Robots />,
   'TDD-SUNDAES': <TDDSundaes />,
   'MEETUPS': <Meetups />,

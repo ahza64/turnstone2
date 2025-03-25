@@ -13,7 +13,7 @@ const projectsData = [
       "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1355&q=80"
     ]
   },
-    {
+  {
     id: "003",
     name: "CALORIE-TRACKER",
     images: [
@@ -22,41 +22,48 @@ const projectsData = [
   },
   {
     id: "004",
-    name: "ROBOTS",
+    name: "MOVIE-REVIEWS",
     images: [
       "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1355&q=80"
     ]
   },
   {
     id: "005",
-    name: "TDD-SUNDAES",
+    name: "ROBOTS",
     images: [
       "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1355&q=80"
     ]
   },
   {
     id: "006",
-    name: "MEETUPS",
+    name: "TDD-SUNDAES",
     images: [
       "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1355&q=80"
     ]
   },
   {
     id: "007",
-    name: "REACTOR",
+    name: "MEETUPS",
     images: [
       "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1355&q=80"
     ]
   },
   {
     id: "008",
-    name: "DATA-VIZ",
+    name: "REACTOR",
     images: [
       "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1355&q=80"
     ]
   },
   {
     id: "009",
+    name: "DATA-VIZ",
+    images: [
+      "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1355&q=80"
+    ]
+  },
+  {
+    id: "010",
     name: "POSTER",
     images: [
       "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1355&q=80"
